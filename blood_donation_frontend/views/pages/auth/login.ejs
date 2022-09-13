@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <%- include('../../layouts/head'); %>
+    <title>Login</title>
+  </head>
+  <body
+    id="kt_body"
+    class="
+      header-fixed header-mobile-fixed
+      subheader-enabled subheader-fixed
+      page-loading
+    "
+  >
+    <!--begin::Header Mobile-->
+    <!--end::Header Mobile-->
+
+    <!--begin::topbar-->
+    <!--end::Header-->
+
+    <!--begin::Content-->
+    <%- include('./login-content'); %>
+    <!--end::Content-->
+
+    <!--begin::Footer-->
+    <%- include('../../layouts/footer') %>
+    <!--end::Footer-->
+
+    <%- include('../../layouts/scripts'); %>
+    <script src="/javascripts/ajaxRequest.js"></script>
+    <script src="/js/pages/features/custom/spinners.js?v=7.2.2"></script>
+    <script>
+      $(document).ready(function () {
+        $('#signin-button').click(function () {
+          let phone = $('#signIn-phone').val();
+          let password = $('#signIn-password').val();
+
+          if (
+            !phone.trim().length &&
+            (password.trim().length || !password.trim().length)
+          ) {
+            document.getElementById('error-phone').style.display = 'block';
+            document.getElementById('error-password').style.display = 'none';
+            document.getElementById('error-phone').innerHTML =
+              'Fields must not be empty!';
+          } else if (
+            phone.trim().length < 11 &&
+            (password.trim().length || !password.trim().length)
+          ) {
+            document.getElementById('error-phone').style.display = 'block';
+            document.getElementById('error-password').style.display = 'none';
+            document.getElementById('error-phone').innerHTML =
+              'Please enter a valid phone number.';
+          } else if (
+            phone.trim().length > 11 &&
+            (password.trim().length || !password.trim().length)
+          ) {
+            document.getElementById('error-phone').style.display = 'block';
+            document.getElementById('error-password').style.display = 'none';
+            document.getElementById('error-phone').innerHTML =
+              'Entered phone number is too large.';
+          } else if (phone.trim().length === 11 && !password.trim().length) {
+            document.getElementById('error-password').style.display = 'block';
+            document.getElementById('error-phone').style.display = 'none';
+            document.getElementById('error-password').innerHTML =
+              'Fields must not be empty!';
+          } else if (phone.trim().length === 11 && password.trim().length < 6) {
+            document.getElementById('error-password').style.display = 'block';
+            document.getElementById('error-phone').style.display = 'none';
+            document.getElementById('error-password').innerHTML =
+              'Password must be at least 6 characters long!';
+          } else if (
+            phone.trim().length === 11 &&
+            password.trim().length >= 6
+          ) {
+            document.getElementById('error-phone').style.display = 'none';
+            document.getElementById('error-password').style.display = 'none';
+
+            $('#signin-button').prop('disabled', true);
+            $('#hide-icon').attr('class', '');
+            $('#signin-button').attr('class', '');
+            $('#signin-button').attr(
+              'class',
+              'btn btn-primary spinner spinner-left spinner-darker-white pl-10 font-weight-bold px-9 py-4 my-3 '
+            );
+
+            const data = {
+              phone,
+              password,
+            };
+            post(data);
+          }
+        });
+
+        async function post(data) {
+          const response = await getData('POST', 'api/users/signin', data);
+          if (response.status === 'success') {
+            var data = {
+              token: response.data.token,
+            };
+
+            try {
+              const result = await getData('POST', 'login-data-store', data);
+              if (result.length) {
+                swal
+                  .fire({
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1000,
+                  })
+                  .then(function (result) {
+                    $('#hide-icon').attr('class', '');
+                    $('#hide-icon').attr('class', 'icon-1x fas fa-arrow-right');
+                    $('#signin-button').attr('class', '');
+                    $('#signin-button').attr(
+                      'class',
+                      'btn btn-primary font-weight-bold px-9 py-4 my-3 '
+                    );
+                    window.location.href = '/dashboard';
+                  });
+              }
+            } catch (error) {
+              $('#signin-button').prop('disabled', false);
+              swal.fire({
+                title: '<i class="icon-4x far fa-angry text-danger"></i>',
+                text: `${error.responseText.slice(
+                  1,
+                  error.responseText.length - 1
+                )}`,
+              });
+              $('#hide-icon').attr('class', '');
+              $('#hide-icon').attr('class', 'icon-1x fas fa-arrow-right');
+              $('#signin-button').attr('class', '');
+              $('#signin-button').attr(
+                'class',
+                'btn btn-primary font-weight-bold px-9 py-4 my-3 '
+              );
+            }
+          } else {
+            $('#signin-button').prop('disabled', false);
+            $('#hide-icon').attr('class', '');
+            $('#hide-icon').attr('class', 'icon-1x fas fa-arrow-right');
+            $('#signin-button').attr('class', '');
+            $('#signin-button').attr(
+              'class',
+              'btn btn-primary font-weight-bold px-9 py-4 my-3 '
+            );
+            swal.fire({
+              title: '<i class="icon-4x far fa-angry text-danger"></i>',
+              text: response.message,
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

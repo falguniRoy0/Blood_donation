@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+   
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--====== Title ======-->
+    <title>RED FLOW</title>
+    
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="css/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="css/nice-select.css">
+    
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="css/jquery.nice-number.min.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="css/default.css">
+    
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: red
+}
+
+.profile-button {
+    background: black;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #8c1806
+}
+
+.profile-button:focus {
+    background: green;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: black;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #8c1806;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 16px
+}
+
+.add-experience:hover {
+    background: black;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #8c1806
+}
+    </style>
+</head>
+
+<body>
+   
+    <!--====== PRELOADER PART START ======-->
+    
+    <div class="preloader">
+        <div class="loader rubix-cube">
+            <div class="layer layer-1"></div>
+            <div class="layer layer-2"></div>
+            <div class="layer layer-3 color-1"></div>
+            <div class="layer layer-4"></div>
+            <div class="layer layer-5"></div>
+            <div class="layer layer-6"></div>
+            <div class="layer layer-7"></div>
+            <div class="layer layer-8"></div>
+        </div>
+    </div>
+    
+    <!--====== PRELOADER PART START ======-->
+   
+    <!--====== HEADER PART START ======-->
+    
+    <header id="header-part">
+       
+        <div class="header-top d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="header-contact text-lg-left text-center">
+                            <ul>
+                                <li><img src="images/all-icon/map.png" alt="icon"><span>Dhaka, Bangladesh</span></li>
+                                <li><img src="images/all-icon/email.png" alt="icon"><span>redflow@gmail.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header-opening-time text-lg-right text-center">
+                            <p>Opening Hours : Everyday - 8 Am to 5 Pm</p>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header top -->
+        
+        <div class="header-logo-support pt-30 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="logo">
+                            <a href="index-2.html">
+                                <img src="images/logo.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div class="support-button float-right d-none d-md-block">
+                            <div class="support float-left">
+                                <!-- <div class="icon">
+                                    <img src="images/all-icon/support.png" alt="icon">
+                                </div> -->
+                                <!-- <div class="cont">
+                                    <p>Need Help? call us free</p>
+                                    <span>+01757769409</span>
+                                </div> -->
+                            </div>
+                            <div class="button float-left">
+                                <a href="#" class="main-btn">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header logo support -->
+    
+    <!--====== PAGE BANNER PART ENDS ======-->
+    
+    <!--====== CONTACT PART START ======-->
+    
+                <div class="container rounded bg-white mt-5 mb-5">
+                    <div class="row">
+                        <div class="col-md-3 border-right">
+                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                <img class="rounded-circle mt-5" width="150px" 
+                                src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                <span class="font-weight-bold" id="userName"></span><span class="text-black-50" id="userEmail"></span>
+                                <!-- <span> </span> -->
+                            </div>
+                        </div>
+                        <div class="col-md-5 border-right">
+                            <div class="p-3 py-5">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="text-right">Profile Settings</h4>
+                                </div>
+                                <form id="contact-form" action="#" method="post" data-toggle="validator">
+                                <div class="row mt-2">
+                                <div class="col-md-6" class="name"><label class="labels">Name
+                                    </label><input type="text" class="form-control" id="inputName" placeholder="name" value="">
+                                </div>
+                                    <div class="col-md-6" class="city"><label class="labels">City
+                                    </label><input type="text" class="form-control" id="city" value="" placeholder="city">
+                                </div>
+                                </div>
+                                <div class="col-md-6" class="usertype"><label class="labels">User_type
+                                </label><input type="text" class="form-control" id="inputType" value="" placeholder="User_type">
+                            </div>
+                            <div class="col-md-6" class="phonenumber"><label class="labels">phone_number
+                            </label><input type="number" class="form-control" id="phone_number" value="" placeholder="phone_number">
+                        </div>
+                                </div>
+                                <!-- <div class="row mt-3">
+                                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                    <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                </div> -->
+                                <div class="mt-5 text-center">
+                                    <button class="btn btn-primary profile-button" type="button" id="cancle">Cancle</button>
+                                    <button class="btn btn-primary profile-button" type="button" id="update">Update</button>
+                                    
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-4">
+                            <div class="p-3 py-5">
+                                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- </div>
+                </div>
+                 </div> -->
+    <!--====== CONTACT PART ENDS ======-->
+   
+    <!--====== FOOTER PART START ======-->
+    
+    
+    
+    <!--====== FOOTER PART ENDS ======-->
+   
+    <!--====== BACK TO TOP PART START ======-->
+    
+    <!-- <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a> -->
+    
+    <!--====== BACK TO TOP PART ENDS ======-->
+    
+    
+    
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script>
+        var user = JSON.parse('<%-JSON.stringify(user)%>');
+      </script>
+    
+    <!--====== jquery js ======-->
+    <script src="/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <!--====== Slick js ======-->
+    <script src="/js/slick.min.js"></script>
+    
+    <!--====== Magnific Popup js ======-->
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    
+    <!--====== Counter Up js ======-->
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    
+    <!--====== Nice Select js ======-->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    
+    <!--====== Nice Number js ======-->
+    <script src="/js/jquery.nice-number.min.js"></script>
+    
+    <!--====== Count Down js ======-->
+    <script src="/js/jquery.countdown.min.js"></script>
+    
+    <!--====== Validator js ======-->
+    <script src="/js/validator.min.js"></script>
+    
+    <!--====== Ajax Contact js ======-->
+    <script src="/js/ajax-contact.js"></script>
+    
+    <!--====== Main js ======-->
+    <script src="/js/main.js"></script>
+    
+    <!--====== Map js ======-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+    <script src="/js/map-script.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/javascripts/ajaxRequest.js"></script>
+    <script>
+        $(document).ready( async function () {
+            const users = await getData('GET', `/api/user/${user.id}`);
+            console.log(users);
+             const username = user.name;
+             const useremail = user.email;
+
+             let inputName = user.name;
+             let inputType = user.usertype
+             let phone_number = user.phonenumber
+             $("#inputName").val(inputName);
+             $("#inputType").val(inputType);
+             $("#phone_number").val(phone_number);
+             $('#userName').text(username);
+             document.getElementById('userEmail').innerText=useremail;
+      });
+      
+    </script>
+
+  </body>
+</html>
