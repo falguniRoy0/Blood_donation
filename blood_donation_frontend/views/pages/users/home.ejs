@@ -592,10 +592,13 @@
     
     <!--====== BACK TO TOP PART ENDS ======-->
     
+      <script>
+      var user = JSON.parse("<%- JSON.stringify(user) %>");
+    </script>
     
     <!--====== jquery js ======-->
-    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="/js/vendor/jquery-1.12.4.min.js"></script>
 
     <!--====== Bootstrap js ======-->
     <script src="js/bootstrap.min.js"></script>
@@ -631,11 +634,7 @@
     <!--====== Map js ======-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
     <script src="js/map-script.js"></script>
-
-
-    <script>
-      var user = JSON.parse("<%- JSON.stringify(user) %>");
-    </script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -655,6 +654,10 @@
             $("#profile").click(function (e) {
                 e.preventDefault();
                 window.location.href = '/profile'
+            });
+            $("#logout").click(function (e) {
+                e.preventDefault();
+                window.location.href = '/signin'
             });
         });
     </script>

@@ -533,8 +533,7 @@
         const create = await getData('POST', '/api/auth', payload);
         if ( create.statusCode === 200 ) {
           alert('User Created!!');
-          window.location.href = "/home";
-          location.reload();
+          window.location.href = "/signin";
         };
       });
     </script>
