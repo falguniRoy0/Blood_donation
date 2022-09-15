@@ -542,14 +542,12 @@
 
           try {
             const login = await getData("POST", "/api/auth/login", payload);
-            // console.log(login);
             if (login.data.token?.length) {
               await getData("POST", "/login-data-store", {
                 token: login.data.token,
               }).then((res) => {
                 if (res.isLoggedIn) {
                   alert("Successfully LoggedIn!!")
-                  window.location.reload();
                   window.location.href = "/home";
                 }
               });

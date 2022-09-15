@@ -4,7 +4,7 @@ const router = express.Router();
 const frontendController = require("../controllers/frontendController");
 const authenticate = require("../middleware/authenticate");
 
-router.get("/hello", authenticate, function (req, res, next) {
+router.get("/", authenticate, function (req, res, next) {
   res.render("index");
 });
 

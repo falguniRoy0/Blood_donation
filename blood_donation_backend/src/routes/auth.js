@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const userController = require('../controllers/auth');
+const wrapper = require('../responses/wrapper');
 
-router.post('/login', userController.login);
-router.post('/', userController.create);
+router.post('/login', wrapper(userController.login));
+router.post('/', wrapper(userController.create));
 
 
 // router.post('/', async (req, res, next) => {

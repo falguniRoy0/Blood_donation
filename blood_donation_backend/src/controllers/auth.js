@@ -1,20 +1,15 @@
 const authService = require('../services/auth');
 
-
 class AuthController {
-    async create(req, res, next) {
-        let payload = req.body;
-        const user = await authService.create(payload);
-        return res.send({
-            user
-        });
-    }
+  create(req, res, next) {
+    let payload = req.body;
+    return authService.save(payload);
+  }
 
-    async login(req, res, next) {
-        let payload =req.body;
-        const token = await authService.login(payload);
-        return res.send(token);
-    }
+  async login(req, res, next) {
+    let payload = req.body;
+    return authService.login(payload);
+  }
 }
 
 module.exports = new AuthController();

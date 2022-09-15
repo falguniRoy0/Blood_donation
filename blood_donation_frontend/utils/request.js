@@ -2,6 +2,7 @@ const request = require('request');
 const { getToken } = require('../utils/session');
 
 function BLOOD_DONATION_CLIENT(method, endPoint, data = {}) {
+  console.log(`${process.env.BLOOD_DONATION_URL}:${process.env.BLOOD_DONATION_PORT}/${endPoint}`)
   let options = {
     url: `${process.env.BLOOD_DONATION_URL}:${process.env.BLOOD_DONATION_PORT}/${endPoint}`,
     method: method,
