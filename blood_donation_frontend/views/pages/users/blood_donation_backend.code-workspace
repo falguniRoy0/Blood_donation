@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../../../../blood_donation_backend"
+	},
+	{
+		"path": "../../.."
+	},
+	{
+		"path": "../../../../../BOOTSTRAP"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "BOOTSTRAP"
+  }
+}
