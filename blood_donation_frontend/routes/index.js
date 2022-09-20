@@ -8,6 +8,10 @@ router.get("/", function (req, res, next) {
   res.render("index");
 });
 
+router.get("/learnAboutBlood", function(req,res,next) {
+  res.render("learnAboutBlood")
+})
+
 router.get("/user", frontendController.getUsers);
 
 router.get("/home", frontendController.home);
