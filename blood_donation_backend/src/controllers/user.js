@@ -10,15 +10,7 @@ class UserController {
     const id = req.params.id;
     return userService.findByID(id);
   }
-
-  // async create(req, res, next) {
-  //   let payload = req.body;
-  //   const user = await userService.create(payload);
-  //   return res.send({
-  //     user,
-  //   });
-  // }
-
+  
   async update(req, res, next) {
     const id = req.params.id;
     const payload = req.body;
@@ -32,30 +24,10 @@ class UserController {
     return 'User deleted successfully';
   }
 
-  // async login( req, res, next){
-  //   const payload = req.body;
-  //   const user = await userService.login(payload);
-  //   if ( !user ) {
-  //     return res.send({
-  //       message: 'invalid credentials'
-  //     });
-  //   }
-
-  //   let token = jwt.sign(
-  //     {
-  //       id: user.id,
-  //       name: user.name,
-  //       email: user.email,
-  //       city: user.city
-  //     },
-  //     'bloodDonation',
-  //     { expiresIn: '2h' }
-  //   );
-  //   res.header('x-auth-token', token);
-  //   return res.send({
-  //     token
-  //   });
-  // }
+  findByUserType(req, res, next) {
+    const usertype = req.params.usertype;
+    return userService.findByUserType(usertype);
+  }
 }
 
 module.exports = new UserController();

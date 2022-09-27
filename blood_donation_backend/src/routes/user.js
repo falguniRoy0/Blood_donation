@@ -8,6 +8,7 @@ router.get('/:id', wrapper(userController.findById));
 router.put('/:id', wrapper(userController.update));
 router.delete('/:id', wrapper(userController.delete));
 // router.post('/login', wrapper(userController.login));
+router.get('/:usertype', wrapper(userController.findByUserType));
 
 
 module.exports = router;

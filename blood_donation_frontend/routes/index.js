@@ -10,7 +10,19 @@ router.get("/", function (req, res, next) {
 
 router.get("/learnAboutBlood", function(req,res,next) {
   res.render("learnAboutBlood")
-})
+});
+
+router.get("/eligibility", function(req,res,next) {
+  res.render("eligibility")
+});
+
+router.get("/typesOfBD", function(req,res,next) {
+  res.render("typesOfBD")
+});
+
+router.get("/commonConcerns", function(req,res,next) {
+  res.render("commonConcerns")
+});
 
 router.get("/user", frontendController.getUsers);
 

@@ -859,10 +859,10 @@ section {
 }
 
 .portfolio-details .portfolio-info h3 {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   border-bottom: 1px solid #eee;
 }
 
@@ -888,6 +888,7 @@ section {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
+font-size: small;
 }
 
 /*--------------------------------------------------------------
@@ -1051,7 +1052,7 @@ section {
 # Clients
 --------------------------------------------------------------*/
 .clients .clients-slider .swiper-slide img {
-  opacity: 0.5;
+  opacity: 1;
   transition: 0.3s;
 }
 

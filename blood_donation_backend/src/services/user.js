@@ -14,15 +14,6 @@ class UserService {
     return User.findByPk(id);
   }
 
-  // async create(payload) {
-  //   let salt = bcrypt.genSaltSync(10);
-  //   let hash = bcrypt.hashSync(payload.password, salt);
-  //   payload.password = hash;
-  //   const newUser = await User.create(payload);
-  //   delete newUser.dataValues.password;
-  //   return newUser;
-  // }
-
   async update(id, payload) {
     const user = await User.findByPk(id);
     if (!user) {
@@ -39,22 +30,13 @@ class UserService {
     return user.destroy();
   }
 
-  // async login(payload){
-  //   const user = await User.findOne({
-  //     where: {
-  //       email:payload.email
-  //     }
-  //   });
-  //   if ( !user ) {
-  //     return null;
-  //   }
-  //   let isValid = bcrypt.compareSync(payload.password, user.password);
-  //   if ( !isValid ) {
-  //     return null;
-  //   }
-    
-  //   return user;
-  // }
+ findByUserType(usertype) {
+    return User.findAll({
+      where: {
+        usertype
+      },
+    });
+  }
 }
 
 module.exports = new UserService();
