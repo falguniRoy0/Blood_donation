@@ -24,9 +24,14 @@ class UserController {
     return 'User deleted successfully';
   }
 
-  findByUserType(req, res, next) {
+  findDonor(req, res, next) {
     const usertype = req.params.usertype;
-    return userService.findByUserType(usertype);
+    return userService.findDonor(usertype);
+  }
+
+  findRecipient(req, res, next) {
+    const usertype = req.params.usertype;
+    return userService.findRecipient(usertype);
   }
 }
 

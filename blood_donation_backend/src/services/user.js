@@ -30,10 +30,18 @@ class UserService {
     return user.destroy();
   }
 
- findByUserType(usertype) {
+ findDonor(usertype) {
     return User.findAll({
       where: {
-        usertype
+        usertype:"Donor"
+      },
+    });
+  }
+
+  findRecipient(usertype) {
+    return User.findAll({
+      where: {
+        usertype:"Recipient"
       },
     });
   }
