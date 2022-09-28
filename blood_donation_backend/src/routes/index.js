@@ -4,8 +4,6 @@ const router = require('express').Router();
 const authRouter = require('./auth');
 
 const userRouter = require('./user');
-const roleRouter = require('./role');
-// const userRoleRouter = require('./userrole');
 const userGroupRouter = require('./usergroup');
 const bloodIssuedRouter = require('./bloodissued');
 const bloodCollectionRouter = require('./bloodcollection');
@@ -19,10 +17,7 @@ const ToDRouter = require('./ToD');
 const { route } = require('./user');
 
 router.use('/auth', authRouter);
-
 router.use('/users', userRouter);
-router.use('/roles', roleRouter);
-// router.use('/user-roles', userRoleRouter);
 router.use('/user-groups', userGroupRouter);
 router.use('/blood-issues', bloodIssuedRouter);
 router.use('/blood-collections', bloodCollectionRouter);

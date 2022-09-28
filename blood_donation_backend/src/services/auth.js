@@ -34,7 +34,6 @@ class AuthService {
       where: {
         email
       },
-      include: { association: 'roles' }
     });
     // console.log(isEmailExit)
     if (!isEmailExit) {

@@ -5,7 +5,7 @@ const { NotFound } = require('../responses/errors');
 class UserService {
    show() {
     return User.findAll({
-      include: [{ association: 'roles' }, { association: 'donor'}, { association: 'reciever' }, { association: 'volunteer' }, 
+      include: [{ association: 'donor'}, { association: 'reciever' }, { association: 'volunteer' }, 
       { association: 'bloodCollection' }, { association: 'bloodRequest' }, { association: 'bloodIssued' }]
     });
   }
