@@ -18,7 +18,7 @@ class FrontendController {
   }
 
   async donorList(req, res, next) {
-    res.render("pages/users/donor-list");
+    res.render("pages/donor/donorList");
   }
 
   async loginDataStore(req, res, next) {
