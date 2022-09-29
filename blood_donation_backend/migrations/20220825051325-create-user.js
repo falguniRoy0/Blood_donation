@@ -50,9 +50,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      status: {
+      bloodgroup: {
         allowNull: true,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

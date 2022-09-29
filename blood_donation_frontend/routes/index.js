@@ -36,6 +36,8 @@ router.get("/profile", frontendController.profile);
 
 router.get("/donorList", frontendController.donorList);
 
+router.get("/recipientList", frontendController.recipientList);
+
 router.post(
   "/login-data-store",
   frontendController.loginDataStore

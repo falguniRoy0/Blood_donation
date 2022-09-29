@@ -49,8 +49,8 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false
       },
-      status: {
-        type: DataTypes.BOOLEAN,
+      bloodgroup: {
+        type: DataTypes.STRING,
         allowNull: true
       }
     },

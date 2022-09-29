@@ -21,6 +21,10 @@ class FrontendController {
     res.render("pages/donor/donorList");
   }
 
+  async recipientList(req, res, next) {
+    res.render("pages/recipient/recipientList");
+  }
+
   async loginDataStore(req, res, next) {
     let userToken = req.body.token.split(".")[1];
     let buff = new Buffer.from(userToken, "base64");
