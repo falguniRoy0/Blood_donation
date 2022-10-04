@@ -17,15 +17,15 @@ module.exports = {
         type: Sequelize.BLOB
       },
       city: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       address: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       contact: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       email: {
@@ -34,10 +34,22 @@ module.exports = {
         type: Sequelize.STRING
       },
       gender: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
+      password: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      remarks: {
+      confirmpassword: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      message: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      status: {
         allowNull: true,
         type: Sequelize.STRING
       },

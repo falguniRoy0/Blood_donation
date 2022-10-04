@@ -123,6 +123,9 @@
                                 <div class="col-md-6" class="usertype"><label class="labels">User_type
                                 </label><input type="text" class="form-control" id="inputType" value="" placeholder="User_type">
                                 </div>
+                                <div class="col-md-6" class="bloodtype"><label class="labels">Blood_type
+                                </label><input type="text" class="form-control" id="bloodType" value="" placeholder="Blood_type">
+                                </div>
                                 </div>
                                 </div>
                                 <div class="row mt-2">
@@ -209,6 +212,7 @@
 
                     let inputName = user.name;
                     let inputType = user.usertype;
+                    let bloodType = user.bloodtype;
                     let phone_number = user.phonenumber;
                     let city = user.city;
                     let address = user.address;
@@ -221,6 +225,7 @@
 
                     $("#inputName").val(inputName);
                     $("#inputType").val(inputType);
+                    $("#bloodType").val(bloodType);
                     $("#phone_number").val(phone_number);
                     $("#city").val(city);
                     $("#address").val(address);
@@ -240,6 +245,7 @@
                 e.preventDefault();
                 const name = $("#inputName").val();
                 const type = $("#inputType").val();
+                const bloodtype = $("#bloodType").val();
                 const number = $("#phone_number").val();
                 const city = $("#city").val();
                 const address = $("#address").val();
@@ -249,7 +255,7 @@
                 const email = $("#email").val();
                 const bloodgroup = $("#bloodgroup").val();
                 const payload = {
-                    name, usertype:type, phonenumber:number, city, address, gender, dateofbirth:dob, zipcode:zip, email, bloodgroup
+                    name, usertype:type, bloodtype, phonenumber:number, city, address, gender, dateofbirth:dob, zipcode:zip, email, bloodgroup
                 };
                 const response = await getData('PUT', `/api/user/${userId}`, payload);
                 console.log(response)

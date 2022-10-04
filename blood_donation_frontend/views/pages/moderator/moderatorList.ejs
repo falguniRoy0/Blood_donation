@@ -65,7 +65,7 @@
                   
                   <main id="main">
                       <div class="container pt-5">
-                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Our Donors List</b></h1>
+                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Our Recipients List</b></h1>
                       </div>
                   </main>
                   
@@ -77,16 +77,16 @@
                           <tr>
                               <th>Id</th>
                               <th>Name</th>
-                              <th>Blood Group</th>
-                              <th>Blood Type</th>
-                              <th>City</th>
+                              <th>Email</th>
                           </tr>
                       </thead>
                       <tbody>         
                     </tbody>
                 </table>
-                </div>
+               </div>
               </div>
+              <div class="text-center"><a href="#"><button class="btn btn-danger" type="button">Become a Moderator</button></a></div>
+
 
               <footer id="footer">
                 <div class="footer-top">
@@ -182,13 +182,13 @@
   <script src="/javascripts/ajaxRequest.js"></script>
   <script>
     $(document).ready(async function () {
-      const response = await getData('GET', '/api/user/Donor');
+      const response = await getData('GET', '/api/user/Moderator');
       const users = await response.data;
       // console.log(users);
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].id, users[i].name, users[i].bloodgroup, users[i].bloodtype, users[i].city
+      users[i].id, users[i].name, users[i].email,
      ]).draw();
     }
 });

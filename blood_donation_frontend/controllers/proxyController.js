@@ -25,6 +25,16 @@ const proxyEndpointMap = {
     service: 'BLOOD_DONATION_CLIENT',
     endpoint: 'users/Recipient'
   },
+
+  '/api/user/volunteer': {
+    service: 'BLOOD_DONATION_CLIENT',
+    endpoint: 'users/Volunteer'
+  },
+
+  '/api/user/moderator': {
+    service: 'BLOOD_DONATION_CLIENT',
+    endpoint: 'users/Moderator'
+  },
 };
 
 const endPointKeys = Object.keys(proxyEndpointMap);

@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
+      bloodtype: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -52,7 +56,11 @@ module.exports = (sequelize, DataTypes) => {
       bloodgroup: {
         type: DataTypes.STRING,
         allowNull: true
-      }
+      },
+      message: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
     },
     {
       defaultScope: {

@@ -11,15 +11,15 @@ const Volunteer = sequelize.define('Volunteer', {
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     address: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     contact: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     email: {
     type: DataTypes.STRING,
@@ -28,12 +28,24 @@ const Volunteer = sequelize.define('Volunteer', {
     },
     gender: {
       type: DataTypes.STRING,
+      allowNull: true
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      },
+    confirmpassword: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      },
+    message: {
+      type: DataTypes.STRING,
       allowNull: false
     },
-    remarks: {
+    status: {
     type: DataTypes.STRING,
     allowNull: true
-  }
+    }
   });
   Volunteer.associate = function(models){
     Volunteer.belongsTo(models.User, {

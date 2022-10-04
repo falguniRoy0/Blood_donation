@@ -26,6 +26,8 @@ class AuthService {
     }
     return User.create(payload);
   }
+
+  
   
 
   async login(payload) {
