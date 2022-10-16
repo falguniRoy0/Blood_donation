@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
       
-        <title>REDFLOW</title>
+        <title><%= pageTitle %></title>
         <meta content="" name="description">
         <meta content="" name="keywords">
       
@@ -44,15 +44,8 @@
                 
                           <li class="dropdown"><a href="#"><span>Member List</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                              <li><a href="#">Admin List</a></li>
-                              <li class="dropdown"><a href="#"><span>User List</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                  <li><a href="/donorList">Donor List</a></li>
-                                  <li><a href="/recipientList">Recipient List</a></li>
-                                  <li><a href="#">Volunteer List</a></li>
-                                  <li><a href="#">Moderator List</a></li>
-                                </ul>
-                              </li>
+                              <li><a href="/donorList">Donor List</a></li>
+                              <li><a href="/recipientList">Recipient List</a></li>
                             </ul>
                           </li>
                           <!-- <li><a class="nav-link scrollto" href="/profile">My Account</a></li> -->
@@ -65,7 +58,7 @@
                   
                   <main id="main">
                       <div class="container pt-5">
-                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Our Recipients List</b></h1>
+                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Safe Donors According to your Location!!</b></h1>
                       </div>
                   </main>
                   
@@ -77,16 +70,17 @@
                           <tr>
                               <th>Id</th>
                               <th>Name</th>
-                              <th>Email</th>
+                              <th>Blood Group</th>
+                              <th>Blood Type</th>
+                              <th>City</th>
+                              <th></th>
                           </tr>
                       </thead>
                       <tbody>         
                     </tbody>
                 </table>
-               </div>
+                </div>
               </div>
-              <div class="text-center"><a href="#"><button class="btn btn-danger" type="button">Become a Moderator</button></a></div>
-
 
               <footer id="footer">
                 <div class="footer-top">
@@ -182,13 +176,13 @@
   <script src="/javascripts/ajaxRequest.js"></script>
   <script>
     $(document).ready(async function () {
-      const response = await getData('GET', '/api/user/Moderator');
+      const response = await getData('GET', '/api/user/Donor');
       const users = await response.data;
       // console.log(users);
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].id, users[i].name, users[i].email,
+      users[i],id, users[i].name, users[i].bloodgroup, users[i].bloodtype, users[i].city, '<a href="/user"><button class="btn btn-danger" type="button">Request</button></a>'
      ]).draw();
     }
 });

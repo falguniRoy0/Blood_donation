@@ -2,46 +2,76 @@ const { storeToken } = require("../utils/session");
 
 class FrontendController {
   async getUsers(req, res, next) {
-    res.render("pages/users/index");
+    res.render("pages/users/index", {
+      pageTitle: 'REDFLOW signUp'
+    });
   }
 
   async signin(req, res, next) {
-    res.render("pages/auth/index");
+    res.render("pages/auth/index", {
+      pageTitle: 'REDFLOW LogIn'
+    });
   }
 
   async home(req, res, next) {
-    res.render("pages/users/home");
+    res.render("pages/users/home", {
+      pageTitle: 'REDFLOW Home'
+    });
   }
 
   async profile(req, res, next) {
-    res.render("pages/users/profile");
+    res.render("pages/users/profile", {
+      pageTitle: 'REDFLOW Profile'
+    });
   }
 
   async donorList(req, res, next) {
-    res.render("pages/donor/donorList");
+    res.render("pages/donor/donorList", {
+      pageTitle: 'REDFLOW Donors List'
+    });
   }
+  async donorQuery(req, res, next) {
+    res.render("pages/donor/donorQuery", {
+      pageTitle: 'REDFLOW'
+    });
+  }
+
 
   async recipientList(req, res, next) {
-    res.render("pages/recipient/recipientList");
+    res.render("pages/recipient/recipientList", {
+      pageTitle: 'REDFLOW Recipients List'
+    });
   }
 
-  async getVolunteerList(req, res, next) {
-    res.render("pages/volunteer/volunteerList");
+
+  async chooseBy(req, res, next) {
+    res.render("pages/bloodCollect/chooseBy", {
+      pageTitle: 'REDFLOW'
+    });
+  }
+  async byRequest(req, res, next) {
+    res.render("pages/bloodCollect/byRequest", {
+      pageTitle: 'REDFLOW'
+    });
+  }
+  async byUs(req, res, next) {
+    res.render("pages/bloodCollect/byUs", {
+      pageTitle: 'REDFLOW'
+    });
+  }
+  async enterLocation(req, res, next) {
+    res.render("pages/bloodCollect/enterLocation", {
+      pageTitle: 'REDFLOW'
+    });
   }
 
-  async getModeratorList(req, res, next) {
-    res.render("pages/moderator/moderatorList");
-  }
 
   async loginDataStore(req, res, next) {
     let userToken = req.body.token.split(".")[1];
     let buff = new Buffer.from(userToken, "base64");
     let user = JSON.parse(buff.toString("ascii"));
-    if (user.usertype!="Admin" && 
-        user.usertype!="Donor" && 
-        user.usertype!="Recipient" && 
-        user.usertype!="Moderator" && 
-        user.usertype!="Volunteer" ) {
+    let role = user.roles.find((role) => role.name == "Donor");
+    if (!role) {
       return res
         .status(401)
         .json({ isLoggedIn: false, message: "You have no permission" });

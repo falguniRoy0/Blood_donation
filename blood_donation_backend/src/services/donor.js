@@ -5,7 +5,7 @@ const { NotFound } = require('../responses/errors');
 class DonorService {
   show() {
     return Donor.findAll({
-      include: [{ association: 'blood_collection' }, { association: 'ToDs' }]
+      include: [{ association: 'blood_collection' }]
     });
   }
 

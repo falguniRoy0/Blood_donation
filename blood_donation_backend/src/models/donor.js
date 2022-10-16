@@ -54,12 +54,6 @@ module.exports = (sequelize, DataTypes) => {
       as: 'blood_collection',
       foreignKey: 'donor_id'
      });
-
-     Donor.belongsToMany(models.ToD, {
-      through: 'DonorToD',
-      as: 'ToDs',
-      foreignKey: 'donorId'
-     });
   }
   return Donor;
 };

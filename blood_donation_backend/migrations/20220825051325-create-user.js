@@ -12,14 +12,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      usertype: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      bloodtype: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
+      // usertype: {
+      //   allowNull: true,
+      //   type: Sequelize.STRING
+      // },
+      // bloodtype: {
+      //   allowNull: true,
+      //   type: Sequelize.STRING
+      // },
       email: {
         allowNull: false,
         unique: true,
@@ -38,26 +38,26 @@ module.exports = {
         type: Sequelize.STRING
       },
       phonenumber: {
-        allowNull: false,
+        allowNull: true,
         unique: true,
         type: Sequelize.INTEGER
       },
       password: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      confirmpassword: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      zipcode: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      bloodgroup: {
         allowNull: true,
         type: Sequelize.STRING
       },
+      confirmpassword: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
+      // zipcode: {
+      //   allowNull: true,
+      //   type: Sequelize.STRING
+      // },
+      // bloodgroup: {
+      //   allowNull: true,
+      //   type: Sequelize.STRING
+      // },
       message: {
         allowNull: true,
         type: Sequelize.STRING

@@ -28,14 +28,14 @@ class TodController {
     return 'Type of Donation deleted successfully';
   }
 
-  async addDonorTod(req, res, next){
-    const ToDId = req.params.ToDId;
-    const donorId = req.params.donorId;
+  // async addDonorTod(req, res, next){
+  //   const ToDId = req.params.ToDId;
+  //   const donorId = req.params.donorId;
 
-    const tod = await todService.addDonorTod(ToDId, donorId);
-    console.log(tod);
-    return res.send({ ToDId, donorId });
-  }
+  //   const tod = await todService.addDonorTod(ToDId, donorId);
+  //   console.log(tod);
+  //   return res.send({ ToDId, donorId });
+  // }
 }
 
 module.exports = new TodController();

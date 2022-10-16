@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>REDFLOW</title>
+  <title><%= pageTitle %></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -87,7 +87,7 @@
                   <label for="name">Name</label>
                   <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
                 </div>
-                
+<!--                 
             <div class="form-group mt-3">
                 <select class="form-control" id="usertype" type="text">
                     <option style="color: #7a6960;">user_type</option>
@@ -97,33 +97,33 @@
                     <option>Moderator</option>
                 </select>
                     <div class="help-block with-errors"></div>
-            </div>
+            </div> -->
 
-            <div class="form-group mt-3">
-              <select class="form-control" id="bloodtype" type="text">
-                  <option style="color: #7a6960;">blood_type</option>
+            <!-- <div class="form-group mt-3">
+              <select class="form-control" id="donationtype" type="text">
+                  <option style="color: #7a6960;">donation_type</option>
                   <option>Whole Blood</option>
                   <option>Red Blood Cells</option>
                   <option>Platelets</option>
                   <option>Plasma</option>
               </select>
                   <div class="help-block with-errors"></div>
-          </div>
+          </div> -->
 
             <div class="form-group mt-3">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" id="email" placeholder="email" required>
               </div>
-
+<!-- 
               <div class="form-group mt-3">
                 <label for="phone_number">phone Number</label>
                 <input type="number" class="form-control" name="phone_number" id="phone_number" placeholder="phone number">
-              </div>
+              </div> -->
 
-              <div class="form-group mt-3">
+              <!-- <div class="form-group mt-3">
                 <label for="dob">Date of Birth</label>
                 <input type="date" class="form-control" name="dob" id="dob" placeholder="date of birth">
-              </div>
+              </div> -->
 
               <div class="row">
                 <div class="form-group col-md-6">
@@ -136,10 +136,10 @@
                 </div>
               </div>
 
-                  <div class="form-group mt-3">
+                  <!-- <div class="form-group mt-3">
                     <label for="code">Zip Code</label>
                     <input type="text" class="form-control" name="code" id="code" placeholder="enter your code" required>
-                  </div>
+                  </div> -->
                 <div class="my-3">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
@@ -254,29 +254,28 @@
       $('#signup').click(async function (e){
         e.preventDefault();
         let name = $('#name').val();
-        let usertype = $('#usertype').val();
-        let bloodtype = $('#bloodtype').val();
+        // let usertype = $('#usertype').val();
+        // let donationtype = $('#donationtype').val();
         let email = $('#email').val();
-        let phonenumber = $('#phone_number').val();
+        // let phonenumber = $('#phone_number').val();
         let password = $('#password').val();
         let confirmpassword = $('#confirm_password').val();
-        let dateofbirth = $('#dob').val();
-        let zipcode = $('#code').val();
+        // let dateofbirth = $('#dob').val();
+        // let zipcode = $('#code').val();
 
         let payload = {
           name, 
-          usertype, 
-          bloodtype,
+          // usertype, 
+          // donationtype,
           email, 
-          phonenumber, 
+          // phonenumber, 
           password, 
           confirmpassword, 
-          dateofbirth, 
-          zipcode
+          // dateofbirth, 
+          // zipcode
         };
-
-        const create = await getData('POST', '/api/auth', payload);
-        if ( create.statusCode === 200 ) {
+        const create = await getData('POST', `/api/role/${role.id}/user/${user.id}`, payload);
+        if ( create.statusCode === 200) {
           alert('User Created!!');
           window.location.href = "/signin";
         };

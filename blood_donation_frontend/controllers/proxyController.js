@@ -10,6 +10,26 @@ const proxyEndpointMap = {
     service: 'BLOOD_DONATION_CLIENT',
     endpoint: 'auth'
   },
+
+  '/api/role': {
+    service: 'BLOOD_DONATION_CLIENT',
+    endpoint: 'roles'
+  },
+
+  '/api/ToD': {
+    service: 'BLOOD_DONATION_CLIENT',
+    endpoint: 'ToDs'
+  },
+
+  '/api/blood-group': {
+    service: 'BLOOD_DONATION_CLIENT',
+    endpoint: 'blood-groups'
+  },
+
+  '/api/donorQuerie': {
+    service: 'BLOOD_DONATION_CLIENT',
+    endpoint: 'donorQueries'
+  },
   
   '/api/auth/login': {
     service: 'BLOOD_DONATION_CLIENT',

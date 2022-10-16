@@ -5,10 +5,6 @@ const Bloodgroup = sequelize.define('Bloodgroup', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  description: {
-    type: DataTypes.STRING,
-    allowNull: true
-  }
   })
   Bloodgroup.associate = function(models){
     Bloodgroup.hasMany(models.Donor, {

@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-      usertype: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      bloodtype: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+      // usertype: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
+      // bloodtype: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -34,29 +34,29 @@ module.exports = (sequelize, DataTypes) => {
       },
       phonenumber: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         unique: true
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       },
       confirmpassword: {
         type: DataTypes.STRING,
-        allowNull: false
-      },
-      zipcode: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      dateofbirth: {
-        type: DataTypes.DATE,
-        allowNull: false
-      },
-      bloodgroup: {
-        type: DataTypes.STRING,
         allowNull: true
       },
+      // zipcode: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
+      dateofbirth: {
+        type: DataTypes.DATE,
+        allowNull: true
+      },
+      // bloodgroup: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
       message: {
         type: DataTypes.STRING,
         allowNull: true
@@ -76,6 +76,15 @@ module.exports = (sequelize, DataTypes) => {
     User.hasOne(models.Donor, {
       as: 'donor',
       foreignKey: 'userId'
+    });
+
+    User.belongsToMany(models.Role, {
+      through: 'UserRole',
+      foreignKey : {
+        name: 'userId',
+        allowNull: false
+      },
+      as: 'roles'
     });
 
     User.hasOne(models.Recipient, {
@@ -100,6 +109,11 @@ module.exports = (sequelize, DataTypes) => {
 
     User.hasOne(models.Bloodissued, {
       as: 'bloodIssued',
+      foreignKey: 'userId'
+    });
+
+    User.hasOne(models.ToD, {
+      as: 'tods',
       foreignKey: 'userId'
     });
   };

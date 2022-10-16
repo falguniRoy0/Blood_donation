@@ -7,6 +7,6 @@ router.post('/', wrapper(ToDController.create));
 router.get('/:id', wrapper(ToDController.findById));
 router.put('/:id', wrapper(ToDController.update));
 router.delete('/:id', wrapper(ToDController.delete));
-router.post('/:ToDId/donor/:donorId', ToDController.addDonorTod);
+
 
 module.exports = router;
