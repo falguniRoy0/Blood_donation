@@ -67,7 +67,7 @@ router.get("/contact", function(req,res,next) {
 
 router.get("/selectUser", function(req,res,next) {
   res.render("selectUser", {
-    pageTitle: 'REDFLOW User Type'
+    pageTitle: 'REDFLOW Login Variation'
   })
 });
 
@@ -86,12 +86,15 @@ router.get("/selectBloodGroup", function(req,res,next) {
 router.get("/user", frontendController.getUsers);
 
 router.get("/home", frontendController.home);
+router.get("/rHome", frontendController.rHome);
 
 router.get("/signin", frontendController.signin);
+router.get("/rSignin", frontendController.rSignin);
 
 router.get("/logout", frontendController.logout);
 
 router.get("/profile", frontendController.profile);
+router.get("/account", frontendController.account);
 
 router.get("/donorList", frontendController.donorList);
 router.get("/donorQuery", frontendController.donorQuery);

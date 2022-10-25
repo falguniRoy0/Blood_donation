@@ -13,14 +13,32 @@ class FrontendController {
     });
   }
 
+  async rSignin(req, res, next) {
+    res.render("pages/auth/index2", {
+      pageTitle: 'REDFLOW LogIn'
+    });
+  }
+
   async home(req, res, next) {
     res.render("pages/users/home", {
       pageTitle: 'REDFLOW Home'
     });
   }
 
+  async rHome(req, res, next) {
+    res.render("pages/recipient/home", {
+      pageTitle: 'REDFLOW Home'
+    });
+  }
+
   async profile(req, res, next) {
     res.render("pages/users/profile", {
+      pageTitle: 'REDFLOW Profile'
+    });
+  }
+
+  async account(req, res, next) {
+    res.render("pages/recipient/profile", {
       pageTitle: 'REDFLOW Profile'
     });
   }
@@ -70,12 +88,12 @@ class FrontendController {
     let userToken = req.body.token.split(".")[1];
     let buff = new Buffer.from(userToken, "base64");
     let user = JSON.parse(buff.toString("ascii"));
-    let role = user.roles.find((role) => role.name == "Donor");
-    if (!role) {
-      return res
-        .status(401)
-        .json({ isLoggedIn: false, message: "You have no permission" });
-    }
+    // let role = user.roles.find((role) => role.name == "Donor");
+    // if (!role) {
+    //   return res
+    //     .status(401)
+    //     .json({ isLoggedIn: false, message: "You have no permission" });
+    // }
 
     req.session.token = req.body.token;
     storeToken(req.session.token);

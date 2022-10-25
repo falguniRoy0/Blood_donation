@@ -40,7 +40,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="/">Home</a></li>
-          <li><a class="getstarted scrollto" href="/signin">Have an Account!!</a></li>
+          <li><a class="getstarted scrollto" href="/selectUser">Have an Account!!</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -83,6 +83,14 @@
   
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
               <form action="" method="" role="" class="php-email-form">
+                <div class="form-group mt-3">
+                  <select class="form-control" id="usertype" type="text">
+                      <option style="color: #7a6960;">Register as a</option>
+                      <option>Donor</option>
+                      <option>Recipient</option>
+                  </select>
+                      <div class="help-block with-errors"></div>
+              </div>
                 <div class="form-group mt-3">
                   <label for="name">Name</label>
                   <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
@@ -245,16 +253,18 @@
     //         // window.location.href = "/signin";
     //         console.log("sign in")
     //     });
-        
+        // var myKeyValues = window.location.search;
+          // console.log(window.location);
       $(document).ready(async function () {
         const users = await getData('GET', '/api/user');
+        // console.log(users.role[name]);
        $('#show-users').text(JSON.stringify(users));
       });
 
       $('#signup').click(async function (e){
         e.preventDefault();
         let name = $('#name').val();
-        // let usertype = $('#usertype').val();
+        let usertype = $('#usertype').val();
         // let donationtype = $('#donationtype').val();
         let email = $('#email').val();
         // let phonenumber = $('#phone_number').val();
@@ -265,7 +275,7 @@
 
         let payload = {
           name, 
-          // usertype, 
+          usertype, 
           // donationtype,
           email, 
           // phonenumber, 
@@ -274,11 +284,17 @@
           // dateofbirth, 
           // zipcode
         };
-        const create = await getData('POST', `/api/role/${role.id}/user/${user.id}`, payload);
-        if ( create.statusCode === 200) {
+        const create = await getData('POST', `/api/auth`, payload);
+        if ( create.statusCode === 200 && usertype=="Donor" ) {
           alert('User Created!!');
-          window.location.href = "/signin";
-        };
+          let id = create.data.id;
+          window.location.href=`/selectBloodGroup?userId=${id}`
+        } else if ( create.statusCode === 200 && usertype=="Recipient" ){
+          alert('User Created!!');
+          window.location.href = '/rSignin'
+        } else {
+          alert("Please fill the all blank!!");
+        }
       });
     </script>
   </body>

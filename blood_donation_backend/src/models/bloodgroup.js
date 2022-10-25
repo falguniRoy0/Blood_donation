@@ -7,9 +7,14 @@ const Bloodgroup = sequelize.define('Bloodgroup', {
   },
   })
   Bloodgroup.associate = function(models){
-    Bloodgroup.hasMany(models.Donor, {
-      as: 'Donor',
-      foreignKey: 'bloodGroupId'
+    // Bloodgroup.hasMany(models.Donor, {
+    //   as: 'Donor',
+    //   foreignKey: 'bloodGroupId'
+    //  });
+
+     Bloodgroup.belongsTo(models.User, {
+      as: 'bloodGroups',
+      foreignKey: 'userId'
      });
 
      Bloodgroup.hasMany(models.Recipient, {

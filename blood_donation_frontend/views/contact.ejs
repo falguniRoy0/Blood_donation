@@ -58,7 +58,7 @@
               </ul>
             </li>
             <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-            <li><a class="getstarted scrollto" href="/user">Get Started</a></li>
+            <li><a class="getstarted scrollto" href="/selectUser">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -67,20 +67,20 @@
   </header><!-- End Header -->
 
 
-  <section id="hero" class="d-flex align-items-center">
+  <section id="hero" class="d-flex align-items-center" style="background-color: white;">
 
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <!-- <h1>Urgent Need for Blood Donors</h1> -->
-          <h2><b>REDFLOW</b> is intended to help people in the need of blood, find the required blood by connecting with donors online.</h2>
+          <h2><b>REDFLOW</b>//Contact with Us to Get more information!!</h2>
           <!-- <div>
             <a href="/user" class="btn-get-started scrollto">Register</a>
             <a href="/signin" class="btn-get-started scrollto">Login</a>
           </div> -->
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="images/image01-removebg-preview (1).png" class="img-fluid animated" alt="">
+          <img src="https://putrabusinessschool.edu.my/wp-content/uploads/2015/10/contact.jpg" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -236,7 +236,7 @@
 //     });
     
   $(document).ready(async function () {
-    const users = await getData('GET', '/api/user');
+    const users = await getData('GET', '/api/contact');
    $('#show-users').text(JSON.stringify(users));
   });
 
@@ -252,7 +252,7 @@
       email, 
       message, 
     };
-    const create = await getData('POST', '/api/auth', payload);
+    const create = await getData('POST', '/api/contact', payload);
     if ( create.statusCode === 200) {
       alert('Message Send!!');
       window.reload();

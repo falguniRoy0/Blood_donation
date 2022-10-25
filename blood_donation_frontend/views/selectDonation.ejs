@@ -58,7 +58,7 @@
               </ul>
             </li>
             <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-            <li><a class="getstarted scrollto" href="/user">Get Started</a></li>
+            <li><a class="getstarted scrollto" href="/selectUser">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -139,22 +139,19 @@
     $('#next').click(async function (e){
       e.preventDefault();
       let name = $('#donationtype').val();
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get('userId');
 
       let payload = {
         name, 
+        userId
       };
       const create = await getData('POST', '/api/ToD', payload);
-      if ( create.statusCode === 200 && payload.name == "Whole Blood Cell") {
-        window.location.href = "/selectBloodGroup";
-      } else if ( create.statusCode === 200 && payload.name == "Power Red Cell") {
-        window.location.href = "/selectBloodGroup";
-      } else if ( create.statusCode === 200 && payload.name == "Plasma") {
-        window.location.href = "/selectBloodGroup";
-       } else if ( create.statusCode === 200 && payload.name == "Platelets") {
-        window.location.href = "/selectBloodGroup";
-      } else {
-        alert("Select any One!!");
-      }
+      if ( create.statusCode === 200 ) {
+        let userId = create.data.userId;
+        window.location.href = `/donorQuery?userId=${userId}`;
+      };
     });
   </script>
 </body>

@@ -182,7 +182,7 @@
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i],id, users[i].name, users[i].bloodgroup, users[i].bloodtype, users[i].city, '<a href="/user"><button class="btn btn-danger" type="button">Request</button></a>'
+      users[i].id, users[i].name, users[i].bloodgroup, users[i].bloodtype, users[i].city, '<a href="#"><button class="btn btn-danger" type="button">Request</button></a>'
      ]).draw();
     }
 });

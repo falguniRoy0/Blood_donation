@@ -15,6 +15,7 @@ const recipientRouter = require('./recipient');
 const donorRouter = require('./donor');
 const ToDRouter = require('./ToD');
 const donorQueryRouter = require('./donorQuery');
+const contactRouter = require('./contact');
 
 const { route } = require('./user');
 
@@ -31,5 +32,6 @@ router.use('/recipients', recipientRouter);
 router.use('/donors', donorRouter);
 router.use('/ToDs', ToDRouter );
 router.use('/donorQueries', donorQueryRouter);
+router.use('/contacts', contactRouter);
 
 module.exports = router;

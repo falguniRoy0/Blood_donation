@@ -22,15 +22,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   })
   Bloodcollection.associate = function(models){
-    Bloodcollection.belongsTo(models.Donor, {
-      as: 'blood_collection',
-      foreignKey: 'donor_id'
-    });
+    // Bloodcollection.belongsTo(models.Donor, {
+    //   as: 'blood_collection',
+    //   foreignKey: 'donor_id'
+    // });
 
-    Bloodcollection.belongsTo(models.User, {
-      as: 'bloodCollection',
-      foreignKey: 'userId'
-    });
+    // Bloodcollection.belongsTo(models.User, {
+    //   as: 'bloodCollection',
+    //   foreignKey: 'userId'
+    // });
   }
   return Bloodcollection;
 };

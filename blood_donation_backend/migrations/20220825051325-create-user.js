@@ -12,10 +12,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      // usertype: {
-      //   allowNull: true,
-      //   type: Sequelize.STRING
-      // },
+      usertype: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
       // bloodtype: {
       //   allowNull: true,
       //   type: Sequelize.STRING

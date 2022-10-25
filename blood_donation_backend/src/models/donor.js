@@ -40,20 +40,20 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
   Donor.associate = function(models){
-    Donor.belongsTo(models.User, {
-      as: 'donor',
-      foreignKey: 'userId'
-    });
+    // Donor.belongsTo(models.User, {
+    //   as: 'donor',
+    //   foreignKey: 'userId'
+    // });
 
-    Donor.belongsTo(models.Bloodgroup, {
-      as: 'Donor',
-      foreignKey: 'bloodGroupId'
-     });
+    // Donor.belongsTo(models.Bloodgroup, {
+    //   as: 'Donor',
+    //   foreignKey: 'bloodGroupId'
+    //  });
 
-    Donor.hasMany(models.Bloodcollection, {
-      as: 'blood_collection',
-      foreignKey: 'donor_id'
-     });
+    // Donor.hasMany(models.Bloodcollection, {
+    //   as: 'blood_collection',
+    //   foreignKey: 'donor_id'
+    //  });
   }
   return Donor;
 };

@@ -40,10 +40,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
   Recipient.associate = function(models){
-    Recipient.belongsTo(models.User, {
-      as: 'reciever',
-      foreignKey: 'userId'
-    });
+    // Recipient.belongsTo(models.User, {
+    //   as: 'reciever',
+    //   foreignKey: 'userId'
+    // });
 
     Recipient.belongsTo(models.Bloodgroup, {
       as: 'Recipient',

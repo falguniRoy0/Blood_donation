@@ -231,13 +231,16 @@
     let weight = $('#weight').val();
     let donateBefore = $('#beforeDonate').val();
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('userId');
+
     let payload = {
-      gender, healthIssue, age, weight, donateBefore
+      gender, healthIssue, age, weight, donateBefore, userId
     };
     const create = await getData('POST', '/api/donorQuerie', payload);
     if ( create.statusCode === 200) {
-      alert('Done Now You Can Create Your Account!!');
-      window.location.href = "/user";
+    alert("Now you can able to Login to enter Your Homepage!!");
+      window.location.href = "/signin";
     };
   });
 </script>

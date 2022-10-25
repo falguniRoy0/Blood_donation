@@ -23,7 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     },
   })
   donorQuery.associate = function(models){
-    //define association
+    donorQuery.belongsTo(models.User, {
+      as: 'donorQueries',
+      foreignKey: 'userId'
+    });
   }
   return donorQuery;
 };

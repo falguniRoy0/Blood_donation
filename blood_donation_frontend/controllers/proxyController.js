@@ -46,14 +46,9 @@ const proxyEndpointMap = {
     endpoint: 'users/Recipient'
   },
 
-  '/api/user/volunteer': {
+  '/api/contact': {
     service: 'BLOOD_DONATION_CLIENT',
-    endpoint: 'users/Volunteer'
-  },
-
-  '/api/user/moderator': {
-    service: 'BLOOD_DONATION_CLIENT',
-    endpoint: 'users/Moderator'
+    endpoint: 'contacts'
   },
 };
 

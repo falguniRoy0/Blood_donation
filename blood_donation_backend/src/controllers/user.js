@@ -24,15 +24,15 @@ class UserController {
     return 'User deleted successfully';
   }
 
-  // findDonor(req, res, next) {
-  //   const usertype = req.params.usertype;
-  //   return userService.findDonor(usertype);
-  // }
+  findDonor(req, res, next) {
+    const usertype = req.params.usertype;
+    return userService.findDonor(usertype);
+  }
 
-  // findRecipient(req, res, next) {
-  //   const usertype = req.params.usertype;
-  //   return userService.findRecipient(usertype);
-  // }
+  findRecipient(req, res, next) {
+    const usertype = req.params.usertype;
+    return userService.findRecipient(usertype);
+  }
 
   // findVolunteer(req, res, next) {
   //   const usertype = req.params.usertype;

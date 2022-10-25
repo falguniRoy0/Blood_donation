@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-      // usertype: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true
-      // },
+      usertype: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       // bloodtype: {
       //   type: DataTypes.STRING,
       //   allowNull: true
@@ -87,20 +87,15 @@ module.exports = (sequelize, DataTypes) => {
       as: 'roles'
     });
 
-    User.hasOne(models.Recipient, {
-      as: 'reciever',
-      foreignKey: 'userId'
-    });
+    // User.hasOne(models.Recipient, {
+    //   as: 'reciever',
+    //   foreignKey: 'userId'
+    // });
 
-    User.hasOne(models.Volunteer, {
-      as: 'volunteer',
-      foreignKey: 'userId'
-    });
-
-    User.hasOne(models.Bloodcollection, {
-      as: 'bloodCollection',
-      foreignKey: 'userId'
-    });
+    // User.hasOne(models.Bloodcollection, {
+    //   as: 'bloodCollection',
+    //   foreignKey: 'userId'
+    // });
 
     User.hasOne(models.Bloodrequest, {
       as: 'bloodRequest',
@@ -114,6 +109,16 @@ module.exports = (sequelize, DataTypes) => {
 
     User.hasOne(models.ToD, {
       as: 'tods',
+      foreignKey: 'userId'
+    });
+
+    User.hasOne(models.donorQuery, {
+      as: 'donorQueries',
+      foreignKey: 'userId'
+    });
+
+    User.hasOne(models.Bloodgroup, {
+      as: 'bloodGroups',
       foreignKey: 'userId'
     });
   };

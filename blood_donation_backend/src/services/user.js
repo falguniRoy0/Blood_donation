@@ -5,7 +5,7 @@ const { NotFound } = require('../responses/errors');
 class UserService {
    show() {
     return User.findAll({
-      include: [{ association: 'roles'}, { association: 'tods'}, { association: 'donor'}, { association: 'reciever' },{ association: 'bloodCollection' }, { association: 'bloodRequest' }, { association: 'bloodIssued' }]
+      include: [{ association: 'roles'}, { association: 'bloodGroups'},  { association: 'tods'}, { association: 'donorQueries'}, { association: 'bloodRequest' }, { association: 'bloodIssued' }]
     });
   }
 
@@ -29,29 +29,22 @@ class UserService {
     return user.destroy();
   }
 
-//  findDonor(usertype) {
-//     return User.findAll({
-//       where: {
-//         usertype:"Donor"
-//       },
-//     });
-//   }
+ findDonor(usertype) {
+    return User.findAll({
+      where: {
+        usertype:"Donor"
+      },
+    });
+  }
 
-//   findRecipient(usertype) {
-//     return User.findAll({
-//       where: {
-//         usertype:"Recipient"
-//       },
-//     });
-//   }
+  findRecipient(usertype) {
+    return User.findAll({
+      where: {
+        usertype:"Recipient"
+      },
+    });
+  }
 
-//   findVolunteer(usertype) {
-//     return User.findAll({
-//       where: {
-//         usertype:"Volunteer"
-//       },
-//     });
-//   }
 }
 
 module.exports = new UserService();
