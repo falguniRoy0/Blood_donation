@@ -16,6 +16,12 @@ router.get("/about", function (req, res, next) {
   });
 });
 
+router.get("/doYouKnow", function (req, res, next) {
+  res.render("doYouKnow", {
+    pageTitle: 'REDFLOW Do You know?',
+  });
+});
+
 router.get("/learnAboutBlood", function(req,res,next) {
   res.render("howToDonate/learnAboutBlood", {
     pageTitle: 'REDFLOW Learn About Blood'

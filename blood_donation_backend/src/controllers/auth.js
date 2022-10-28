@@ -12,19 +12,18 @@ class AuthController {
      mailer.sendMail({
       from: "flowred70@gmail.com",
       to: payload.email,
-      subject: "Nodemailer Demo",
+      subject: "WELLCOME to REDFLOW!!",
       template: {
         name: "EmailConfirmation.html",
         data: {
-          first_name: "Falguni",
-          last_name: "Roy",
-          gender: "Female",
-          company: "RedFlow"
+          name: payload.name,
+          usertype: payload.usertype,
+          company: "REDFLOW"
         }
       }
     });
   
-    res.send("Send HTML file successfully");
+    // res.send("Send HTML file successfully");
     return user;
   }
 
