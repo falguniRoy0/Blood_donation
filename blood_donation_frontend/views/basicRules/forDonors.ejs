@@ -1,214 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include ./../partials/head.ejs %>
+    <title><%= pageTitle %></title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <body>
+    <!-- ======= Header ======= -->
+    <%- include ./../partials/header.ejs %>
+    <!-- End Header -->
 
-  <title><%= pageTitle %></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="images/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="/vendor/aos/aos.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <h1 class="text-light"><a href="/"><img src="images/favicon.png" width="60px" height="120px"><span><b><big style="color: rgb(224, 53, 53);">RED</big>FLOW</span></b></a></h1>
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="/about">About</a></li>
-          <li><a class="nav-link scrollto" href="/doYouKnow">Do You Know?</a></li>
-          <li class="dropdown"><a href="#"><span>How to Donate</span> <i class="bi bi-chevron-down"></i></a>
-            <!-- <li class="dropdown"><a href=""><span>How to Donate</span> <i class="bi bi-chevron-right"></i></a> -->
-              <ul>
-                <li><a href="/eligibility">Eligibility Requirements</a></li>
-                <li><a href="/typesOfBD">Types of Blood Donations</a></li>
-                <li><a href="/learnAboutBlood">Learn About Blood</a></li>
-                <li><a href="/commonConcerns">Common Concerns</a></li>
-              </ul>
-            </li>
-          <li><a class="nav-link scrollto" href="/bloodProducts">Blood Products</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <li class="dropdown"><a href="#"><span>Basic Rules</span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="/rulesDonors">For Donors</a></li>
-                <li><a href="/rulesRecipients">For Recipients</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-            <li><a class="getstarted scrollto" href="/selectUser">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header>
-
-
-
-  <main id="main">
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container pt-5">
-         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Donors Rules</b></h1>
-         <p style="text-align: center;">(Ensure your safety. This Organization will not be responsible for any inconvenience.)</p>
-         <p style="color: gray; font-style:italic; text-align: center;">We are constantly struggling to collect blood for the dying patients. It is our responsibility 
-            to manage the blood of patients in an emergency, as well as to ensure the safety of a blood donor.
-      </p>
-      </div>
-      <div class="container pt-5">
-        <section id="services" class="services section-bg">
-          <div class="container" data-aos="fade-up">
-            
-            <div class="row">
-              <div class="col-md-6 col-lg-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box">
-                  <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
-                  <img src="https://www.donatebloodbd.com/images/donors-Bangladesh.jpg" class="img-fluid" alt="" data-aos="zoom-in">
-                  <hr>
-                  <h4 class="title"><a href="" style="color: rgb(224, 53, 53);">Telling the Blood Donors</a></h4>
-                  <p class="description">
+    <main id="main">
+      <div id="portfolio-details" class="portfolio-details">
+        <div class="container pt-5">
+          <h1
+            style="
+              color: rgb(224, 53, 53);
+              font-style: italic;
+              font-size: 50px;
+              text-align: center;
+            "
+          >
+            <b>Donors Rules</b>
+          </h1>
+          <p style="text-align: center">
+            (Ensure your safety. This Organization will not be responsible for
+            any inconvenience.)
+          </p>
+          <p style="color: gray; font-style: italic; text-align: center">
+            We are constantly struggling to collect blood for the dying
+            patients. It is our responsibility to manage the blood of patients
+            in an emergency, as well as to ensure the safety of a blood donor.
+          </p>
+        </div>
+        <div class="container pt-5">
+          <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+              <div class="row">
+                <div
+                  class="col-md-6 col-lg-6 d-flex align-items-stretch"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <div class="icon-box">
+                    <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
+                    <img
+                      src="https://www.donatebloodbd.com/images/donors-Bangladesh.jpg"
+                      class="img-fluid"
+                      alt=""
+                      data-aos="zoom-in"
+                    />
+                    <hr />
+                    <h4 class="title">
+                      <a href="" style="color: rgb(224, 53, 53)"
+                        >Telling the Blood Donors</a
+                      >
+                    </h4>
+                    <p class="description"></p>
                     <ul>
-                      <li style="text-align: left;">Find out which hospital/clinic the patient is in. Do not donate blood anywhere other than hospital/clinic. Not even at the patient's home.</li>
-                      <li style="text-align: left;">Do not meet the blood applicant (the person you are contacting on the mobile number) anywhere other than the hospital/clinic. Do not ask to meet in the alley next to the hospital, or in a shop.</li>
-                      <li style="text-align: left;">Check the patient before donating blood. Check the patient's report, doctor's requisition letter.</li>
-                      <li style="text-align: left;">It is better to have two friends with you when donating blood.</li>
-                      <li style="text-align: left;">Make sure to use new needles when donating blood...</li>
-                      <li style="text-align: left;">If in doubt about the competence of the attending expert, inform the authority...</li>
-                      <li style="text-align: left;">Donate after blood cross matching, not before... most govt hospitals keep blood without cross matching... it should never be done... self aware... donate blood after cross matching...</li>
+                      <li style="text-align: left">
+                        Find out which hospital/clinic the patient is in. Do not
+                        donate blood anywhere other than hospital/clinic. Not
+                        even at the patient's home.
+                      </li>
+
+                      <li style="text-align: left">
+                        Do not meet the blood applicant (the person you are
+                        contacting on the mobile number) anywhere other than the
+                        hospital/clinic. Do not ask to meet in the alley next to
+                        the hospital, or in a shop.
+                      </li>
+
+                      <li style="text-align: left">
+                        Check the patient before donating blood. Check the
+                        patient's report, doctor's requisition letter.
+                      </li>
+
+                      <li style="text-align: left">
+                        It is better to have two friends with you when donating
+                        blood.
+                      </li>
+
+                      <li style="text-align: left">
+                        Make sure to use new needles when donating blood...
+                      </li>
+
+                      <li style="text-align: left">
+                        If in doubt about the competence of the attending
+                        expert, inform the authority...
+                      </li>
+
+                      <li style="text-align: left">
+                        Donate after blood cross matching, not before... most
+                        govt hospitals keep blood without cross matching... it
+                        should never be done... self aware... donate blood after
+                        cross matching...
+                      </li>
                     </ul>
-                  </p>
+                  </div>
                 </div>
-              </div>
-      
-              <div class="col-md-6 col-lg-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box">
-                    <img src="https://www.donatebloodbd.com/images/donors-Bangladesh.jpg" class="img-fluid" alt="" data-aos="zoom-in">
-                    <hr>
-                    <h4 class="title"><a href="" style="color: rgb(224, 53, 53);">Donation of Blood is voluntarily Free and Safe</a></h4>
-                  <p class="description">
+
+                <div
+                  class="col-md-6 col-lg-6 d-flex align-items-stretch"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                >
+                  <div class="icon-box">
+                    <img
+                      src="https://www.donatebloodbd.com/images/donors-Bangladesh.jpg"
+                      class="img-fluid"
+                      alt=""
+                      data-aos="zoom-in"
+                    />
+                    <hr />
+                    <h4 class="title">
+                      <a href="" style="color: rgb(224, 53, 53)"
+                        >Donation of Blood is voluntarily Free and Safe</a
+                      >
+                    </h4>
+                    <p class="description"></p>
                     <ul>
-                      <li style="text-align: left;">If you want to go for blood donation, first talk to the relative of the patient... After knowing the name of the hospital, cabin/ward number, go directly to that cabin/ward... Blood applicant somewhere other than the hospital/clinic (the person you are contacting on the mobile number) Don't meet him... in the alley next to the hospital, or even ask him to meet him in a shop... not even at the patient's home...</li>
-                      <li style="text-align: left;">Know the cabin/ward number, go directly to the cabin/ward... see the patient...
-                        Then donating blood... inform the patient and patient's relatives that you are donating blood for free... this will not give the hospital authority or any third party a chance to corrupt...</li>
+                      <li style="text-align: left">
+                        If you want to go for blood donation, first talk to the
+                        relative of the patient... After knowing the name of the
+                        hospital, cabin/ward number, go directly to that
+                        cabin/ward... Blood applicant somewhere other than the
+                        hospital/clinic (the person you are contacting on the
+                        mobile number) Don't meet him... in the alley next to
+                        the hospital, or even ask him to meet him in a shop...
+                        not even at the patient's home...
+                      </li>
+                      <li style="text-align: left">
+                        Know the cabin/ward number, go directly to the
+                        cabin/ward... see the patient... Then donating blood...
+                        inform the patient and patient's relatives that you are
+                        donating blood for free... this will not give the
+                        hospital authority or any third party a chance to
+                        corrupt...
+                      </li>
                     </ul>
-                  </p>
+                  </div>
                 </div>
-              </div>
-              <br><br>
-             <center><div><a href="images/REDFLOW.pdf"><button class="btn btn-danger" type="button">Download Guide</button></a></div></center>
-            </div>
-          </div>
-        </section>
-        </div>
-  
-  
-  <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-  
-            <div class="col-lg-3 col-md-6 footer-contact">
-              <h3><Big style="color: rgb(224, 53, 53);"><b>RED</Big>FLOW</b></h3>
-              <p>
-                <strong>Phone:</strong> +00801757769409<br>
-                <strong>Email:</strong> redflow@gmail.com<br>
-              </p>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Log in</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Register</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Find Blood</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Find Donors</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Social Networks</h4>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <br /><br />
+                <center>
+                  <div>
+                    <a href="images/REDFLOW.pdf"
+                      ><button class="btn btn-danger" type="button">
+                        Download Guide
+                      </button></a
+                    >
+                  </div>
+                </center>
               </div>
             </div>
-  
-          </div>
+          </section>
         </div>
       </div>
-  
-      <div class="container py-4">
-        <div class="credits">
-          Powerd by <a href="https://bootstrapmade.com/">redflow</a>
-        </div>
-      </div>
-    </footer><!-- End Footer -->
-  
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  
-  
-  <script src="vendor/aos/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  <script src="vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
-  <script src="js/main.js"></script>
+    </main>
+
+    <!-- ======= Footer Section ======= -->
+    <%- include ./../partials/footer.ejs %>
+    <!-- End Footer -->
+
+    <!-- ======= Scroll to top Section ======= -->
+    <%- include ./../partials/scrollButton.ejs %>
+    <!-- ======= Scroll to top Section End ======= -->
+
+    <!-- ======= Scripts Section ======= -->
+    <%- include ./../partials/scripts.ejs %>
+    <!-- ======= Scripts Section End ======= -->
   </body>
-  </html>
-  
+</html>
