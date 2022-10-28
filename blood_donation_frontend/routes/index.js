@@ -6,7 +6,7 @@ const authenticate = require("../middleware/authenticate");
 
 router.get("/", function (req, res, next) {
   res.render("index", {
-    pageTitle: 'REDFLOW Index',
+    pageTitle: 'REDFLOW Home',
   });
 });
 
