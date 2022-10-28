@@ -1,350 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include ./../partials/head.ejs %>
+    <title><%= pageTitle %></title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <body>
+    <!-- ======= Header ======= -->
+    <%- include ./../partials/header.ejs %>
+    <!-- End Header -->
 
-  <title><%= pageTitle %></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <main id="main">
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container pt-5">
+          <h1
+            style="
+              color: rgb(224, 53, 53);
+              font-style: italic;
+              font-size: 50px;
+              text-align: center;
+            "
+          >
+            <b>Common Concerns</b>
+          </h1>
+          <p style="color: gray; font-style: italic; text-align: center">
+            Many people are reluctant to make their first blood donation, but
+            once they do, they find the donation process to be easy and
+            gratifying.
+          </p>
+        </div>
+        <div class="container pt-5">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  <div>
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/donate-blood/components/856x423-common-concerns-needles.jpg.transform/1288/q70/feature/image.jpeg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-  <!-- Favicons -->
-  <link href="images/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="/vendor/aos/aos.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <h1 class="text-light"><a href="/"><img src="images/favicon.png" width="60px" height="120px"><span><b><big style="color: rgb(224, 53, 53);">RED</big>FLOW</span></b></a></h1>
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="/about">About</a></li>
-          <li><a class="nav-link scrollto" href="/doYouKnow">Do You Know?</a></li>
-          <li class="dropdown"><a href="#"><span>How to Donate</span> <i class="bi bi-chevron-down"></i></a>
-            <!-- <li class="dropdown"><a href=""><span>How to Donate</span> <i class="bi bi-chevron-right"></i></a> -->
-              <ul>
-                <li><a href="/eligibility">Eligibility Requirements</a></li>
-                <li><a href="/typesOfBD">Types of Blood Donations</a></li>
-                <li><a href="/learnAboutBlood">Learn About Blood</a></li>
-                <li><a href="/commonConcerns">Common Concerns</a></li>
-              </ul>
-            </li>
-          <li><a class="nav-link scrollto" href="/bloodProducts">Blood Products</a></li>
-          <li class="dropdown"><a href="#"><span>Basic Rules</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/rulesDonors">For Donors</a></li>
-              <li><a href="/rulesRecipients">For Recipients</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="/selectUser">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-
-
-  <main id="main">
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container pt-5">
-         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Common Concerns</b></h1>
-         <p style="color: gray; font-style:italic; text-align: center;">Many people are reluctant to make their first blood donation,
-           but once they do, they find the donation process to be easy and gratifying.
-      </p>
-      </div>
-      <div class="container pt-5">
-        <div class="row gy-4">
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-                <div>
-                  <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/donate-blood/components/856x423-common-concerns-needles.jpg.transform/1288/q70/feature/image.jpeg" alt="">
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h2 style="color: black"><b>I Don't Like Needles</b></h2>
+                <div class="portfolio-description">
+                  <p>
+                    You’re not alone: fear of needles certainly prevents some
+                    people from donating blood. But if you’re willing to spend a
+                    few minutes facing your fears (donating really can be that
+                    fast) you may find that the satisfaction you feel makes it
+                    worth it.
+                  </p>
+                  <p><b>Try the Helpful Tips Below:</b></p>
                 </div>
               </div>
             </div>
           </div>
-          
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h2  style="color:black;"><b>I Don't Like Needles</b></h2>
-          <div class="portfolio-description">
-              <p>
-                  You’re not alone: fear of needles certainly prevents some people from donating blood. But if you’re willing to spend a few minutes facing your fears (donating really can be that fast) you may find that the satisfaction you feel makes it worth it.
-              </p>
-              <p><b>Try the Helpful Tips Below:</b></p>
-            </div>
-          </div>
-      </div>
-      <section id="clients" class="clients section-bg">
+        </div>
+        <section id="clients" class="clients section-bg">
           <div class="container" data-aos="fade-up">
             <div class="section-title">
-              <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                  <div class="swiper-wrapper">
-                    <div class="swiper">
-                      <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-take-pride.png.transform/282/q70/feature/image.png" class="img-fluid" alt="">
-                      <h1 style="color:rgb(224, 53, 53);"><b>Take Pride</b></h1>
-                      <p style="font-size:small;">Try to focus on the good you are doing -<br> your blood donation can help save more than one life.</p>
+              <div
+                class="clients-slider swiper"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper">
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-take-pride.png.transform/282/q70/feature/image.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h1 style="color: rgb(224, 53, 53)"><b>Take Pride</b></h1>
+                    <p style="font-size: small">
+                      Try to focus on the good you are doing -<br />
+                      your blood donation can help save more than one life.
+                    </p>
                   </div>
-                    <div class="swiper">
-                      <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-prepared.png.img.png" class="img-fluid" alt="">
-                      <h1 style="color:rgb(224, 53, 53);"><b>Be Prepared</b></h1>
-                      <p style="font-size:small;">Before your appointment, read up on the donation <br>process so you know what to expect at every step.</p>
+                  <div class="swiper">
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-prepared.png.img.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h1 style="color: rgb(224, 53, 53)"><b>Be Prepared</b></h1>
+                    <p style="font-size: small">
+                      Before your appointment, read up on the donation
+                      <br />process so you know what to expect at every step.
+                    </p>
                   </div>
-                    <div class="swiper">
-                      <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-relax.png.img.png" class="img-fluid" alt="">
-                      <h1 style="color:rgb(224, 53, 53);"><b>Relax</b></h1>
-                      <p style="font-size:small;">Listen to music, read a book, talk to our staff, or <br>simply close your eyes and rest for a few minutes.</p>
-                  </div>
+                  <div class="swiper">
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-relax.png.img.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h1 style="color: rgb(224, 53, 53)"><b>Relax</b></h1>
+                    <p style="font-size: small">
+                      Listen to music, read a book, talk to our staff, or
+                      <br />simply close your eyes and rest for a few minutes.
+                    </p>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </section>
-  
-           <div class="container pt-5">
-             <div class="row gy-4">
-               <div class="col-lg-8">
-                 <div class="portfolio-details-slider swiper">
-                   <div class="swiper-wrapper align-items-center">
-                     <div>
-                       <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/donors-with-masks/Donor_registering.jpg.transform/1288/q70/feature/image.jpeg" alt="">
-                     </div>
-                   </div>
-                 </div>
-               </div>
-               <div class="col-lg-4">
-                  <div class="portfolio-info">
-                    <h2  style="color:black;"><b>I'm Not Sure I'm Eligible</b></h2>
-                <div class="portfolio-description">
-                    <p>
-                      There’s a very good chance you meet the criteria.
-                    </p>
-                    <p><b>For most donations, these are the basic requirements:  </b></p>
+
+        <div class="container pt-5">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  <div>
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/donors-with-masks/Donor_registering.jpg.transform/1288/q70/feature/image.jpeg"
+                      alt=""
+                    />
                   </div>
                 </div>
+              </div>
             </div>
-               <section id="clients" class="clients section-bg">
-                  <div class="container" data-aos="fade-up">
-                    <div class="section-title">
-                      <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                          <div class="swiper-wrapper">
-                            <div class="swiper">
-                              <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/eligibility-good-health.png.transform/282/q70/feature/image.png" class="img-fluid" alt="">
-                              <h1 style="color:rgb(224, 53, 53);"><b>Good Health</b></h1>
-                              <p style="font-size:small;">You generally feel well, even if you're being <br>treated for a chronic condition. </p>
-                          </div>
-                            <div class="swiper">
-                              <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/eligibility-17-years-old.png.img.png" class="img-fluid" alt="">
-                              <h1 style="color:rgb(224, 53, 53);"><b>Age 17</b></h1>
-                              <p style="font-size:small;">16 year olds may donate with parental permission in <br>certain states if allowed by state law.</p>
-                          </div>
-                            <div class="swiper">
-                              <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/eligibility-healthy-weight.png.img.png" class="img-fluid" alt="">
-                              <h1 style="color:rgb(224, 53, 53);"><b>110 lbs</b></h1>
-                              <p style="font-size:small;">Additional weight requirements apply for donors age 18 <br>or younger and all high school donors.</p>
-                          </div>
-                          </div>
-                        </div>
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h2 style="color: black"><b>I'm Not Sure I'm Eligible</b></h2>
+                <div class="portfolio-description">
+                  <p>There’s a very good chance you meet the criteria.</p>
+                  <p>
+                    <b
+                      >For most donations, these are the basic requirements:
+                    </b>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="clients" class="clients section-bg">
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+              <div
+                class="clients-slider swiper"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper">
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/eligibility-good-health.png.transform/282/q70/feature/image.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h1 style="color: rgb(224, 53, 53)"><b>Good Health</b></h1>
+                    <p style="font-size: small">
+                      You generally feel well, even if you're being
+                      <br />treated for a chronic condition.
+                    </p>
+                  </div>
+                  <div class="swiper">
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/eligibility-17-years-old.png.img.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h1 style="color: rgb(224, 53, 53)"><b>Age 17</b></h1>
+                    <p style="font-size: small">
+                      16 year olds may donate with parental permission in
+                      <br />certain states if allowed by state law.
+                    </p>
+                  </div>
+                  <div class="swiper">
+                    <img
+                      src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/eligibility-healthy-weight.png.img.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h1 style="color: rgb(224, 53, 53)"><b>110 lbs</b></h1>
+                    <p style="font-size: small">
+                      Additional weight requirements apply for donors age 18
+                      <br />or younger and all high school donors.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="container pt-5">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  <div>
+                    <img
+                      src="https://www.osfhealthcare.org/blog/wp-content/uploads/2021/12/shutterstock_1586903512-1.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h2 style="color: black"><b>Is it Safe to Donate?</b></h2>
+                <div class="portfolio-description">
+                  <p>
+                    Yes, donating blood is safe. You can’t get AIDS or any other
+                    infectious disease from giving blood because we always use
+                    new, sterile needles that are discarded after one use.
+                  </p>
+                  <p>
+                    You’ll even be given a mini-physical at your appointment, to
+                    ensure you are healthy enough to donate that day. We’ll
+                    check your temperature, blood pressure, pulse and
+                    hemoglobin.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="container pt-5">
+              <div class="row gy-4">
+                <div class="col-lg-8">
+                  <div class="portfolio-details-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                      <div>
+                        <img
+                          src="https://www.redcrossblood.org/content/redcrossblood/en/donate-blood/how-to-donate/common-concerns/_jcr_content/par/section_control_332161301/column-parsys-1/image_copy_copy_copy.img.jpg/1650389077361.jpg"
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
-                </section>
-  
-               
-               
-               <div class="container pt-5">
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="portfolio-info">
+                    <h2 style="color: black"><b>I'm Afraid I'll Faint</b></h2>
+                    <div class="portfolio-description">
+                      <p>
+                        Most donors feel fine after donating blood, but if you
+                        do feel faint or fatigued, simply lie down until you
+                        feel better. It might help you to think about this: you
+                        have about 10 pints of blood in your body. Roughly 1
+                        pint is given during a donation. Your body can replenish
+                        that loss in a short time (a matter of hours for some
+                        components, a few weeks for others).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container pt-5">
                   <div class="row gy-4">
                     <div class="col-lg-8">
                       <div class="portfolio-details-slider swiper">
                         <div class="swiper-wrapper align-items-center">
                           <div>
-                            <img src="https://www.osfhealthcare.org/blog/wp-content/uploads/2021/12/shutterstock_1586903512-1.jpg" alt="">
+                            <img
+                              src="https://www.mydr.com.au/wp-content/uploads/2018/08/AdobeStock_127966544-1210x700.jpg"
+                              alt=""
+                            />
                           </div>
                         </div>
                       </div>
                     </div>
-                    
                     <div class="col-lg-4">
                       <div class="portfolio-info">
-                        <h2  style="color:black;"><b>Is it Safe to Donate?</b></h2>
-                    <div class="portfolio-description">
-                        <p>
-                          Yes, donating blood is safe. You can’t get AIDS or any other infectious disease from giving blood because we always use new, sterile needles that are discarded after one use.
-                        </p>
-                        <p>You’ll even be given a mini-physical at your appointment, to ensure you are healthy enough to donate that day. We’ll check your temperature, blood pressure, pulse and hemoglobin.</p>
+                        <h2 style="color: black">
+                          <b>I Don't Have the Right Kind of Blood</b>
+                        </h2>
+                        <div class="portfolio-description">
+                          <p>
+                            Perhaps you’ve heard an appeal for donors that says
+                            we’re running low on certain blood types. That
+                            doesn’t mean other types aren’t valuable: there’s
+                            always a need and purpose for every type of blood.
+                            Here’s what we’re looking for today:
+                          </p>
+                        </div>
                       </div>
                     </div>
+                    <section id="clients" class="clients section-bg">
+                      <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                          <div
+                            class="clients-slider swiper"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                          >
+                            <div class="swiper-wrapper">
+                              <div class="swiper">
+                                <img
+                                  src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-all-types.png.img.png"
+                                  class="img-fluid"
+                                  alt=""
+                                />
+                                <h1 style="color: rgb(224, 53, 53)">
+                                  <b>All Types</b>
+                                </h1>
+                                <p style="font-size: small">
+                                  Whether you’re A, B, AB or O – or unknown –
+                                  all types of blood <br />are valuable and can
+                                  help save lives.
+                                </p>
+                              </div>
+                              <div class="swiper">
+                                <img
+                                  src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-all-components.png.img.png"
+                                  class="img-fluid"
+                                  alt=""
+                                />
+                                <h1 style="color: rgb(224, 53, 53)">
+                                  <b>All Components</b>
+                                </h1>
+                                <p style="font-size: small">
+                                  You can donate whole blood, or certain
+                                  components such as red cells,<br />
+                                  platelets or plasma.
+                                </p>
+                              </div>
+                              <div class="swiper">
+                                <img
+                                  src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-volunteers.png.img.png"
+                                  class="img-fluid"
+                                  alt=""
+                                />
+                                <h1 style="color: rgb(224, 53, 53)">
+                                  <b>Volunteer Donors</b>
+                                </h1>
+                                <p style="font-size: small">
+                                  The most important thing is that you are
+                                  willing to <br />make this generous,
+                                  life-saving donation.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
                 </div>
-  
-                    <div class="container pt-5">
-                      <div class="row gy-4">
-                        <div class="col-lg-8">
-                          <div class="portfolio-details-slider swiper">
-                            <div class="swiper-wrapper align-items-center">
-                              <div>
-                                <img src="https://www.redcrossblood.org/content/redcrossblood/en/donate-blood/how-to-donate/common-concerns/_jcr_content/par/section_control_332161301/column-parsys-1/image_copy_copy_copy.img.jpg/1650389077361.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="col-lg-4">
-                          <div class="portfolio-info">
-                            <h2  style="color:black;"><b>I'm Afraid I'll Faint</b></h2>
-                        <div class="portfolio-description">
-                            <p>
-                              Most donors feel fine after donating blood, but if you do feel faint or fatigued, simply lie down until you feel better. It might help you to think about this: you have about 10 pints of blood in your body. Roughly 1 pint is given during a donation. 
-                              Your body can replenish that loss in a short time (a matter of hours for some components, a few weeks for others).
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="container pt-5">
-                      <div class="row gy-4">
-                        <div class="col-lg-8">
-                          <div class="portfolio-details-slider swiper">
-                            <div class="swiper-wrapper align-items-center">
-                              <div>
-                                <img src="https://www.mydr.com.au/wp-content/uploads/2018/08/AdobeStock_127966544-1210x700.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                           <div class="portfolio-info">
-                             <h2  style="color:black;"><b>I Don't Have the Right Kind of Blood</b></h2>
-                         <div class="portfolio-description">
-                             <p>
-                              Perhaps you’ve heard an appeal for donors that says we’re running low on certain blood types. That doesn’t mean other types aren’t valuable: there’s always a need and purpose for every type of blood. Here’s what we’re looking for today:
-                             </p>
-                           </div>
-                         </div>
-                     </div>
-                        <section id="clients" class="clients section-bg">
-                           <div class="container" data-aos="fade-up">
-                             <div class="section-title">
-                               <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                                   <div class="swiper-wrapper">
-                                     <div class="swiper">
-                                       <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-all-types.png.img.png" class="img-fluid" alt="">
-                                       <h1 style="color:rgb(224, 53, 53);"><b>All Types</b></h1>
-                                       <p style="font-size:small;">Whether you’re A, B, AB or O – or unknown – all types of blood <br>are valuable and can help save lives.</p>
-                                   </div>
-                                     <div class="swiper">
-                                       <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-all-components.png.img.png" class="img-fluid" alt="">
-                                       <h1 style="color:rgb(224, 53, 53);"><b>All Components</b></h1>
-                                       <p style="font-size:small;">You can donate whole blood, or certain components such as red cells,<br> platelets or plasma.
-                                      </p>
-                                   </div>
-                                     <div class="swiper">
-                                       <img src="https://www.redcrossblood.org/content/dam/redcrossblood/rcb/icons-and-badges/concerns-volunteers.png.img.png" class="img-fluid" alt="">
-                                       <h1 style="color:rgb(224, 53, 53);"><b>Volunteer Donors</b></h1>
-                                       <p style="font-size:small;">The most important thing is that you are willing to <br>make this generous, life-saving donation.</p>
-                                   </div>
-                                   </div>
-                                 </div>
-                             </div>
-                           </div>
-                         </section>
-          </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Portfolio Details Section -->
-  </main><!-- End #main -->
-  
-  
-  <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-  
-            <div class="col-lg-3 col-md-6 footer-contact">
-              <h3><Big style="color: rgb(224, 53, 53);"><b>RED</Big>FLOW</b></h3>
-              <p>
-                <strong>Phone:</strong> +00801757769409<br>
-                <strong>Email:</strong> redflow@gmail.com<br>
-              </p>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Log in</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Register</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Find Blood</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Find Donors</a></li>
-              </ul>
-            </div>
-  
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Social Networks</h4>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
-  
           </div>
         </div>
-      </div>
-  
-      <div class="container py-4">
-        <div class="credits">
-          Powerd by <a href="https://bootstrapmade.com/">redflow</a>
-        </div>
-      </div>
-    </footer><!-- End Footer -->
-  
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  
-  
-  <script src="vendor/aos/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  <script src="vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
-  <script src="js/main.js"></script>
+      </section>
+      <!-- End Portfolio Details Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer Section ======= -->
+    <%- include ./../partials/footer.ejs %>
+    <!-- End Footer -->
+
+    <!-- ======= Scroll to top Section ======= -->
+    <%- include ./../partials/scrollButton.ejs %>
+    <!-- ======= Scroll to top Section End ======= -->
+
+    <!-- ======= Scripts Section ======= -->
+    <%- include ./../partials/scripts.ejs %>
+    <!-- ======= Scripts Section End ======= -->
   </body>
-  </html>
-  
+</html>
