@@ -7,6 +7,12 @@ class FrontendController {
     });
   }
 
+  async getPharmacy(req, res, next) {
+    res.render("pages/users/pharmacyIndex", {
+      pageTitle: 'REDFLOW Give Pharmacy Details'
+    });
+  }
+
   async signin(req, res, next) {
     res.render("pages/auth/index", {
       pageTitle: 'REDFLOW LogIn'
@@ -60,6 +66,11 @@ class FrontendController {
       pageTitle: 'REDFLOW Recipients List'
     });
   }
+  async pharmacyList(req, res, next) {
+    res.render("pages/recipient/pharmacyList", {
+      pageTitle: 'REDFLOW Pharmacies List'
+    });
+  }
 
 
   async chooseBy(req, res, next) {
@@ -72,13 +83,13 @@ class FrontendController {
       pageTitle: 'REDFLOW'
     });
   }
-  async byUs(req, res, next) {
-    res.render("pages/bloodCollect/byUs", {
+  async enterLocation(req, res, next) {
+    res.render("pages/bloodCollect/enterLocation", {
       pageTitle: 'REDFLOW'
     });
   }
-  async enterLocation(req, res, next) {
-    res.render("pages/bloodCollect/enterLocation", {
+  async safeDonors(req, res, next) {
+    res.render("pages/bloodCollect/safeDonors", {
       pageTitle: 'REDFLOW'
     });
   }

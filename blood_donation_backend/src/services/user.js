@@ -10,7 +10,9 @@ class UserService {
   }
 
   findByID(id) {
-    return User.findByPk(id);
+    return User.findByPk(id, {
+      include: [{ association: 'tods' }, { association: 'bloodGroups'}, { association: 'donorQueries'}]
+    });
   }
 
   async update(id, payload) {

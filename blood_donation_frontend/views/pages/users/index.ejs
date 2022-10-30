@@ -84,8 +84,8 @@
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
               <form action="" method="" role="" class="php-email-form">
                 <div class="form-group mt-3">
+                  <p style="color: black;">Register as a:</p>
                   <select class="form-control" id="usertype" type="text">
-                      <option style="color: #7a6960;">Register as a</option>
                       <option>Donor</option>
                       <option>Recipient</option>
                   </select>
@@ -285,11 +285,16 @@
           // zipcode
         };
         const create = await getData('POST', '/api/auth', payload);
-        if ( create.statusCode === 200) {
+        if ( create.statusCode === 200 && create.data.usertype=="Donor" ) {
           alert('User Created!!');
           let id = create.data.id;
           window.location.href=`/selectBloodGroup?userId=${id}`
-        };
+        } else if ( create.statusCode === 200 && create.data.usertype=="Recipient" ) {
+          alert('User Created!!');
+          window.location.href='/rSignin'
+        } else {
+          window.reload();
+        }
       });
     </script>
   </body>

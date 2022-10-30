@@ -24,8 +24,70 @@
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <!--Google Map-->
+  <link href="mapBootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <script
+    src="https://kit.fontawesome.com/ab2155e76b.js"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
+
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
+
+
+  <style>
+    body {
+  color: green;
+  font-family: "Poppins", sans-serif;
+}
+
+.fa-map-marker-alt,
+.fa-dot-circle {
+  color: #5bc0de;
+}
+
+/*Jumbotron*/
+.jumbotron {
+  background-color: rgb(251, 237, 237);
+  margin: 0;
+  padding: 10px;
+}
+
+.jumbotron h1 {
+  letter-spacing: 2.5px;
+  font-size: 3.5em;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  text-align: center;
+  font-weight: bold
+}
+
+/*map*/
+#googleMap {
+  width: 70%;
+  height: 500px;
+  margin: 10px auto;
+}
+
+/*output box*/
+#output {
+  text-align: center;
+  font-size: 1em;
+  margin: 20px auto;
+}
+
+#mode {
+  color: black;
+}
+
+  </style>
 </head>
 
 <body>
@@ -36,13 +98,8 @@
       </div>
       <nav id="navbar" class="navbar">
         <ul>
-
-          <li class="dropdown"><a href="#"><span>Member List</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/donorList">Donor List</a></li>
-              <li><a href="/recipientList">Recipient List</a></li>
-            </ul>
-          </li>
+          <li><a class="nav-link scrollto" href="/donorList">Donors List</a></li>
+          <li><a class="nav-link scrollto" href="/pharmacyList">Pharmacies</a></li>
           <li><a class="nav-link scrollto" href="/account">My Account</a></li>
           <li><a class="getstarted scrollto" href="/rSignin">Log Out</a></li>
         </ul>
@@ -51,96 +108,61 @@
     </div>
   </header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-6 order-2 order-lg-4 d-flex flex-column justify-content-center">
-          <h1>Welcome to be a Part of Our Organization as a Recipient!!</h1>
-          <h2><b>REDFLOW</b> is intended to help people in the need of blood, find the required blood by connecting with donors online.</h2>
-          <div> 
-            <div class="footer-newsletter">
-            <div class="container">
-            <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <form action="" method="post">
-                  <input type="email" name="email"><input type="submit" value="Search">
-                </form>
-              </div>
-          </div>
-          </div>
-        </div>
+ 
+<main id="main">
+  <div class="jumbotron">
+    <div class="container-fluid">
+      <h1>Find The Distance Between You & Donors/Nearby Pharmacies.</h1>
+      <p style="color: red;">This Map Will Help You Calculate Your Travelling Distances.</p>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="from" class="col-xs-2 control-label"
+            ><i class="far fa-dot-circle"></i
+          ></label>
+          <div class="col-xs-4">
+            <input
+              type="text"
+              id="from"
+              placeholder="Donor/Pharmacy Address"
+              class="form-control"
+            />
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="images/image01-removebg-preview (1).png" class="img-fluid animated" alt="">
+        <div class="form-group">
+          <label for="to" class="col-xs-2 control-label"
+            ><i class="fas fa-map-marker-alt"></i
+          ></label>
+          <div class="col-xs-4">
+            <input
+              type="text"
+              id="to"
+              placeholder="Your Address"
+              class="form-control"
+            />
+          </div>
         </div>
+      </form>
+      <div class="col-xs-offset-2 col-xs-10">
+        <button class="btn btn-primary btn-lg" onclick="calcRoute();">
+          Enter
+        </button>
       </div>
     </div>
+    <div class="container-fluid">
+      <div id="googleMap"></div>
+      <div id="output"></div>
+    </div>
+  </div>
+</main>
 
-  </section><!-- End Hero -->
-  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-
-    <footer id="footer">
-        <div class="footer-top">
-          <div class="container">
-            <div class="row">
-    
-              <div class="col-lg-3 col-md-6 footer-contact">
-                <h3><Big style="color: rgb(224, 53, 53);"><b>RED</Big>FLOW</b></h3>
-                <p>
-                  <strong>Phone:</strong> +00801757769409<br>
-                  <strong>Email:</strong> redflow@gmail.com<br>
-                </p>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Log in</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Register</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Find Blood</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Find Donors</a></li>
-                  <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Find </a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
-                </ul>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Our Social Networks</h4>
-                <!-- <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
-                <div class="social-links mt-3">
-                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                  <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                  <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                </div>
-              </div>
-    
-            </div>
-          </div>
-        </div>
-    
-        <div class="container py-4">
-          <div class="credits">
-            Powerd by <a href="https://bootstrapmade.com/">redflow</a>
-          </div>
-        </div>
-      </footer>
     
       <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmfZ8LXdHc-voorsUwItQw7ZL2xMeLkkc&libraries=places"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="Scripts/jquery-3.1.1.min.js"></script>
 
 
     <script src="vendor/aos/aos.js"></script>
@@ -153,5 +175,69 @@
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <script src="vendor/php-email-form/validate.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      let myLatLng = { lat: 23.81360466930146, lng: 90.4113832175947 };
+      let mapOptions = {
+      center: myLatLng,
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+
+
+//create map
+let map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+let directionsService = new google.maps.DirectionsService();
+let directionsDisplay = new google.maps.DirectionsRenderer();
+directionsDisplay.setMap(map);
+
+
+//define calcRoute function
+function calcRoute() {
+    let request = {
+        origin: document.getElementById("from").value,
+        destination: document.getElementById("to").value,
+        travelMode: google.maps.TravelMode.DRIVING, 
+        unitSystem: google.maps.UnitSystem.IMPERIAL
+    }
+
+    directionsService.route(request, function (result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+
+            //Get distance and time
+            const output = document.querySelector('#output');
+            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + 
+            ".<br />To: " + document.getElementById("to").value + 
+            ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + 
+            ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + 
+            ".</div>";
+
+            directionsDisplay.setDirections(result);
+        } else {
+            directionsDisplay.setDirections({ routes: [] });
+            map.setCenter(myLatLng);
+
+            //show error message
+            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
+        }
+    });
+
+}
+
+//create autocomplete objects for all inputs
+let options = {
+    types: ['address'],
+    componentRestrictions: {
+        country: ['bd']
+      }
+}
+
+let input1 = document.getElementById("from");
+let autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+
+let input2 = document.getElementById("to");
+let autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+
+    </script>
   </body>
 </html>

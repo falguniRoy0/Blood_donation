@@ -16,10 +16,10 @@ module.exports = {
         allowNull: true,
         type: Sequelize.STRING
       },
-      // bloodtype: {
-      //   allowNull: true,
-      //   type: Sequelize.STRING
-      // },
+      bloodtype: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
       email: {
         allowNull: false,
         unique: true,
@@ -50,14 +50,10 @@ module.exports = {
         allowNull: true,
         type: Sequelize.STRING
       },
-      // zipcode: {
-      //   allowNull: true,
-      //   type: Sequelize.STRING
-      // },
-      // bloodgroup: {
-      //   allowNull: true,
-      //   type: Sequelize.STRING
-      // },
+      bloodgroup: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
       message: {
         allowNull: true,
         type: Sequelize.STRING

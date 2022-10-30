@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true
       },
-      // bloodtype: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true
-      // },
+      bloodtype: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -45,18 +45,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true
       },
-      // zipcode: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true
-      // },
       dateofbirth: {
         type: DataTypes.DATE,
         allowNull: true
       },
-      // bloodgroup: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true
-      // },
+      bloodgroup: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       message: {
         type: DataTypes.STRING,
         allowNull: true

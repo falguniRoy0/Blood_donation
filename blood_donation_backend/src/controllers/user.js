@@ -33,16 +33,6 @@ class UserController {
     const usertype = req.params.usertype;
     return userService.findRecipient(usertype);
   }
-
-  // findVolunteer(req, res, next) {
-  //   const usertype = req.params.usertype;
-  //   return userService.findVolunteer(usertype);
-  // }
-
-  // findModerator(req, res, next) {
-  //   const usertype = req.params.usertype;
-  //   return userService.findModerator(usertype);
-  // }
 }
 
 module.exports = new UserController();

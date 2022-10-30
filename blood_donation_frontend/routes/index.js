@@ -90,6 +90,7 @@ router.get("/selectBloodGroup", function(req,res,next) {
 });
 
 router.get("/user", frontendController.getUsers);
+router.get("/pharmacyUser", frontendController.getPharmacy);
 
 router.get("/home", frontendController.home);
 router.get("/rHome", frontendController.rHome);
@@ -106,11 +107,13 @@ router.get("/donorList", frontendController.donorList);
 router.get("/donorQuery", frontendController.donorQuery);
 
 router.get("/recipientList", frontendController.recipientList);
+router.get("/pharmacyList", frontendController.pharmacyList);
+
 
 router.get("/chooseBy", frontendController.chooseBy);
 router.get("/byRequest", frontendController.byRequest);
-router.get("/byUs", frontendController.byUs);
 router.get("/enterLocation", frontendController.enterLocation);
+router.get("/safeDonors", frontendController.safeDonors);
 
 
 

@@ -84,7 +84,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto" href="/home">Home</a></li>
-              <li><a class="getstarted scrollto" href="/signin">Log Out</a></li>
+              <li><a class="getstarted scrollto" href="/selectUser">Log Out</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
@@ -97,7 +97,7 @@
                             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                                 <img class="rounded-circle mt-5" width="150px" 
                                 src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                <span class="font-weight-bold" id="userName"></span><span class="text-black-50" id="userEmail"></span>
+                                <span class="font-weight-bold" id="userType"></span><span class="text-black-50" id="userName"></span>
                                 <!-- <span> </span> -->
                             </div>
                         </div>
@@ -111,9 +111,9 @@
                                 <div class="col-md-6" class="name"><label class="labels">Name
                                     </label><input type="text" class="form-control" id="inputName" placeholder="name" value="">
                                 </div>
-                                <div class="col-md-6" class="usertype"><label class="labels">User_type
+                                <!-- <div class="col-md-6" class="usertype"><label class="labels">User_type
                                 </label><input type="text" class="form-control" id="inputType" value="" placeholder="User_type">
-                                </div>
+                                </div> -->
                                 <div class="col-md-6" class="bloodtype"><label class="labels">Donation_type
                                 </label><input type="text" class="form-control" id="bloodType" value="" placeholder="donation_type">
                                 </div>
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-6"><label class="labels">Date of Birth</label>
+                                    <div class="col-md-12"><label class="labels">Date of Birth</label>
                                         <input type="text" class="form-control" id="dateofbirth" placeholder="enter date of birth" value="">
                                     </div>
                                     <!-- <div class="col-md-6"><label class="labels">Zip Code</label>
@@ -189,7 +189,6 @@
     ></script>
     <script src="/javascripts/ajaxRequest.js"></script>
     <script>
-        alert('Please update your Location');
         $(document).ready(function () {
             let userId = user.id;
             
@@ -199,54 +198,49 @@
                 const response = await getData('GET', `/api/user/${userId}`);
                 if(response.statusCode === 200) {
                     const user = response.data;
+                    // console.log(user.tods.name);
+                    const usertype = user.usertype;
                     const username = user.name;
-                    const useremail = user.email;
 
                     let inputName = user.name;
-                    let inputType = user.usertype;
-                    let bloodType = user.bloodtype;
+                    let bloodType = user.tods.name;
                     let phone_number = user.phonenumber;
                     let city = user.city;
                     let address = user.address;
-                    let gender = user.gender;
+                    let gender = user.donorQueries.gender;
                     let dateofbirth = user.dateofbirth;
-                    // let zipcode = user.zipcode;
                     let email = user.email;
-                    let bloodgroup = user.bloodgroup;
+                    let bloodgroup = user.bloodGroups.bloodGroup;
 
 
                     $("#inputName").val(inputName);
-                    $("#inputType").val(inputType);
                     $("#bloodType").val(bloodType);
                     $("#phone_number").val(phone_number);
                     $("#city").val(city);
                     $("#address").val(address);
                     $("#gender").val(gender);
                     $("#dateofbirth").val(dateofbirth);
-                    // $("#zipcode").val(zipcode);
                     $("#email").val(email);
                     $("#bloodgroup").val(bloodgroup);
 
+                    $("#userType").text(usertype);
                     $("#userName").text(username);
-                    $("#userEmail").text(useremail);
                 }
             }           
             // update user click
             $('#update-user').click(async function(e) {
                 e.preventDefault();
                 const name = $("#inputName").val();
-                const type = $("#inputType").val();
                 const bloodtype = $("#bloodType").val();
                 const number = $("#phone_number").val();
                 const city = $("#city").val();
                 const address = $("#address").val();
                 const gender= $("#gender").val();
                 const dob = $("#dateofbirth").val();
-                // const zip = $("#zipcode").val();
                 const email = $("#email").val();
                 const bloodgroup = $("#bloodgroup").val();
                 const payload = {
-                    name, usertype:type, bloodtype, phonenumber:number, city, address, gender, dateofbirth:dob, email, bloodgroup
+                    name, bloodtype, phonenumber:number, city, address, gender, dateofbirth:dob, email, bloodgroup
                 };
                 const response = await getData('PUT', `/api/user/${userId}`, payload);
                 console.log(response)

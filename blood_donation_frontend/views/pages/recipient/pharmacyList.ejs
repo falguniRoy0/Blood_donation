@@ -58,7 +58,7 @@
                   
                   <main id="main">
                       <div class="container pt-5">
-                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Our Donors List</b></h1>
+                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Search Your Nearby Pharmacies</b></h1>
                       </div>
                   </main>
                   
@@ -70,17 +70,18 @@
                           <tr>
                               <th>Id</th>
                               <th>Name</th>
-                              <th>Blood Group</th>
-                              <th>Donation Type</th>
+                              <th>Groups</th>
                               <th>City</th>
-                              <th></th>
+                              <th>Address</th>
                           </tr>
                       </thead>
                       <tbody>         
                     </tbody>
                 </table>
-                </div>
+                 </div>
               </div>
+             <!-- <center><div><a href="/map"><button class="btn btn-danger" type="button">See Distance</button></a></div></center>  -->
+
 
               <footer id="footer">
                 <div class="footer-top">
@@ -176,13 +177,13 @@
   <script src="/javascripts/ajaxRequest.js"></script>
   <script>
     $(document).ready(async function () {
-      const response = await getData('GET', '/api/user/Donor');
+      const response = await getData('GET', '/api/pharmacy');
       const users = await response.data;
       // console.log(users);
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].id, users[i].name, users[i].bloodgroup, users[i].bloodtype, users[i].city, '<a href="#"><button class="btn btn-danger" type="button">Request</button></a>'
+      users[i].id, users[i].name, users[i].bloodGroups, users[i].city, users[i].address
      ]).draw();
     }
 });

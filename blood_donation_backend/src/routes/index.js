@@ -16,6 +16,9 @@ const donorRouter = require('./donor');
 const ToDRouter = require('./ToD');
 const donorQueryRouter = require('./donorQuery');
 const contactRouter = require('./contact');
+const safeDonorRouter = require('./safeDonor');
+const locationRouter = require('./location');
+const pharmacyRouter = require('./pharmacy');
 
 const { route } = require('./user');
 
@@ -33,5 +36,8 @@ router.use('/donors', donorRouter);
 router.use('/ToDs', ToDRouter );
 router.use('/donorQueries', donorQueryRouter);
 router.use('/contacts', contactRouter);
+router.use('/safeDonors', safeDonorRouter);
+router.use('/locations', locationRouter);
+router.use('/pharmacies', pharmacyRouter);
 
 module.exports = router;

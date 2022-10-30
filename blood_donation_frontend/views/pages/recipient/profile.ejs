@@ -84,7 +84,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto" href="/rHome">Home</a></li>
-              <li><a class="getstarted scrollto" href="/rSignin">Log Out</a></li>
+              <li><a class="getstarted scrollto" href="/selectUser">Log Out</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
@@ -162,9 +162,7 @@
     
     
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    <script>
-        var user = JSON.parse('<%-JSON.stringify(user)%>');
-      </script>
+   
     
     <script src="/vendor/aos/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -177,6 +175,9 @@
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <!-- <script src="/vendor/php-email-form/validate.js"></script> -->
     <script src="/js/main.js"></script>
+    <script>
+        var user = JSON.parse('<%-JSON.stringify(user)%>');
+      </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -202,27 +203,17 @@
                     const username = user.name;
 
                     let inputName = user.name;
-                    // let inputType = user.usertype;
-                    // let bloodType = user.bloodtype;
                     let phone_number = user.phonenumber;
                     let city = user.city;
                     let address = user.address;
-                    // let gender = user.gender;
-                    // let dateofbirth = user.dateofbirth;
-                    // let zipcode = user.zipcode;
                     let email = user.email;
                     let message = user.message;
 
 
                     $("#inputName").val(inputName);
-                    // $("#inputType").val(inputType);
-                    // $("#bloodType").val(bloodType);
                     $("#phone_number").val(phone_number);
                     $("#city").val(city);
                     $("#address").val(address);
-                    // $("#gender").val(gender);
-                    // $("#dateofbirth").val(dateofbirth);
-                    // $("#zipcode").val(zipcode);
                     $("#email").val(email);
                     $("#message").val(message);
 
@@ -234,18 +225,13 @@
             $('#update-user').click(async function(e) {
                 e.preventDefault();
                 const name = $("#inputName").val();
-                // const type = $("#inputType").val();
-                // const bloodtype = $("#bloodType").val();
-                const number = $("#phone_number").val();
+                const phonenumber = $("#phone_number").val();
                 const city = $("#city").val();
                 const address = $("#address").val();
-                // const gender= $("#gender").val();
-                // const dob = $("#dateofbirth").val();
-                // const zip = $("#zipcode").val();
                 const email = $("#email").val();
                 const message = $("#message").val();
                 const payload = {
-                    name, phonenumber:number, city, address, email, message
+                    name, phonenumber, city, address, email, message
                 };
                 const response = await getData('PUT', `/api/user/${userId}`, payload);
                 console.log(response)
