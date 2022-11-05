@@ -10,7 +10,6 @@ const bloodIssuedRouter = require('./bloodissued');
 const bloodCollectionRouter = require('./bloodcollection');
 const bloodRequestRouter = require('./bloodrequest');
 const bloodGroupRouter = require('./bloodgroup');
-const volunteerRouter = require('./volunteer');
 const recipientRouter = require('./recipient');
 const donorRouter = require('./donor');
 const ToDRouter = require('./ToD');
@@ -19,6 +18,7 @@ const contactRouter = require('./contact');
 const safeDonorRouter = require('./safeDonor');
 const locationRouter = require('./location');
 const pharmacyRouter = require('./pharmacy');
+// const dashboardRouter = require('./dashboard');
 
 const { route } = require('./user');
 
@@ -30,7 +30,6 @@ router.use('/blood-issues', bloodIssuedRouter);
 router.use('/blood-collections', bloodCollectionRouter);
 router.use('/blood-requests', bloodRequestRouter);
 router.use('/blood-groups', bloodGroupRouter);
-router.use('/volunteers', volunteerRouter);
 router.use('/recipients', recipientRouter);
 router.use('/donors', donorRouter);
 router.use('/ToDs', ToDRouter );
@@ -39,5 +38,6 @@ router.use('/contacts', contactRouter);
 router.use('/safeDonors', safeDonorRouter);
 router.use('/locations', locationRouter);
 router.use('/pharmacies', pharmacyRouter);
+// router.use('/dashboards', dashboardRouter);
 
 module.exports = router;

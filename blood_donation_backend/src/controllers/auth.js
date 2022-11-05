@@ -22,7 +22,6 @@ class AuthController {
         }
       }
     });
-  
     // res.send("Send HTML file successfully");
     return user;
   }

@@ -45,15 +45,15 @@ module.exports = (sequelize, DataTypes) => {
     //   foreignKey: 'userId'
     // });
 
-    Recipient.belongsTo(models.Bloodgroup, {
-      as: 'Recipient',
-      foreignKey: 'bloodGroupId'
-     });
+    // Recipient.belongsTo(models.Bloodgroup, {
+    //   as: 'Recipient',
+    //   foreignKey: 'bloodGroupId'
+    //  });
 
-     Recipient.hasMany(models.Bloodrequest, {
-      as: 'blood_request',
-      foreignKey: 'recipient_id'
-     }); 
+    //  Recipient.belongsTo(models.Bloodrequest, {
+    //   as: 'Recipient',
+    //   foreignKey: 'reqId'
+    //  }); 
   }
   return Recipient;
 };

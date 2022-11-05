@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+   
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      
+        <title><%= pageTitle %></title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+      
+        <!-- Favicons -->
+        <link href="images/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="/vendor/aos/aos.css" rel="stylesheet">
+        <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- DataTable bootstrap-05 -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+               <!-- Template Main CSS File -->
+               <link href="css/style.css" rel="stylesheet">
+            </head>
+        
+            <body>
+                <header id="header" class="fixed-top d-flex align-items-center">
+                    <div class="container d-flex align-items-center justify-content-between">
+                      <div class="logo">
+                        <h1 class="text-light"><a href="/"><img src="images/favicon.png" width="60px" height="120px"><span><b><big style="color: rgb(224, 53, 53);">RED</big>FLOW</span></b></a></h1>
+                      </div>
+                      <nav id="navbar" class="navbar">
+                        <ul>
+                
+                          <li class="dropdown"><a href="#"><span>Member List</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                              <li><a href="/donorList">Donor List</a></li>
+                              <li><a href="/recipientList">Recipient List</a></li>
+                            </ul>
+                          </li>
+                          <!-- <li><a class="nav-link scrollto" href="/profile">My Account</a></li> -->
+                          <li><a class="getstarted scrollto" href="/signin">Log Out</a></li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                      </nav>
+                    </div>
+                  </header>
+
+
+
+                  <main id="main">
+                    <section id="about" class="about">
+                      <div class="container">
+                
+                        <div class="row justify-content-between">
+                          <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+                            <img src="https://img.freepik.com/premium-vector/pharmacy-business-medicine-drug-store-character-pharmacist-care-patient-professional-pharmaceutical-science-online-pill-drugstore-infographic-background-flat-cartoon-vector-illustration_87771-6558.jpg?w=2000" class="img-fluid" alt="" data-aos="zoom-in">
+                          </div>
+                          <div class="col-lg-6 pt-5 pt-lg-5">
+                            <form action="" method="" role="" class="php-email-form">
+                                <h3 data-aos="fade-up">Your Requirements:</h3><br>
+                                <br>
+                                <div class="form-group mt-3">
+                                    <p style="color: black;">Select Blood Group</p>
+                                      <select class="form-control" id="bloodGroup" type="text">
+                                          <option>A Positive</option>
+                                          <option>A Negative</option>
+                                          <option>B Positive</option>
+                                          <option>B Negative</option>
+                                          <option>O Positive</option>
+                                          <option>O Negative</option>
+                                          <option>AB Positive</option>
+                                          <option>AB Negative</option>
+                                      </select>
+                                          <div class="help-block with-errors"></div>
+                                  </div>
+                                  <div class="form-group mt-3">
+                                      <label for="date">Date</label>
+                                      <input type="datetime" class="form-control" name="date" id="date" placeholder="date" required>
+                                    </div>
+                                 <div class="form-group mt-3">
+                                      <label for="nob">Number of Bags</label>
+                                      <input type="city" class="form-control" name="nob" id="nob" placeholder="1" required>
+                                 </div>
+                                 <div class="form-group mt-3">
+                                    <label for="location">Location</label>
+                                    <textarea class="form-control" name="location" rows="5" id="location" placeholder="location" required></textarea>
+                                </div>
+                                <div class="mt-5 text-center">
+                                    <button class="btn btn-danger profile-button" type="button" id="submit">Request</button>
+                                    <button class="btn btn-danger profile-button" type="button" id="cancel">Cancel</button>                                   
+                                </div>
+                              </div>
+                              </form>            
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </section>
+                  </main>
+                
+                  <footer id="footer">
+                    <div class="footer-top">
+                      <div class="container">
+                        <div class="row">
+                
+                          <div class="col-lg-3 col-md-6 footer-contact">
+                            <h3><Big style="color: rgb(224, 53, 53);"><b>RED</Big>FLOW</b></h3>
+                            <p>
+                              <strong>Phone:</strong> +00801757769409<br>
+                              <strong>Email:</strong> redflow@gmail.com<br>
+                            </p>
+                          </div>
+                
+                          <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                              <li><i class="bx bx-chevron-right"></i> <a href="#">Log in</a></li>
+                              <li><i class="bx bx-chevron-right"></i> <a href="#">Register</a></li>
+                              <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
+                              <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
+                            </ul>
+                          </div>
+                
+                          <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                              <li><i class="bx bx-chevron-right"></i> <a href="#">Find Blood</a></li>
+                              <li><i class="bx bx-chevron-right"></i> <a href="#">Find Donors</a></li>
+                            </ul>
+                          </div>
+                
+                          <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Our Social Networks</h4>
+                            <div class="social-links mt-3">
+                              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                          </div>
+                
+                        </div>
+                      </div>
+                    </div>
+                
+                    <div class="container py-4">
+                      <div class="credits">
+                        Powerd by <a href="https://bootstrapmade.com/">redflow</a>
+                      </div>
+                    </div>
+                  </footer><!-- End Footer -->
+                
+                  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+                
+                
+                <script src="vendor/aos/aos.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+                <script src="vendor/glightbox/js/glightbox.min.js"></script>
+                <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+                <script src="vendor/swiper/swiper-bundle.min.js"></script>
+                <script src="vendor/php-email-form/validate.js"></script>
+                <script src="js/main.js"></script>
+
+
+                <script>
+                    var user = JSON.parse("<%- JSON.stringify(user) %>");
+                  </script>
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                  <script
+                    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+                    crossorigin="anonymous"
+                  ></script>
+                  <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+                    crossorigin="anonymous"
+                  ></script>
+                  <script src="/javascripts/ajaxRequest.js"></script>
+                  <script>
+                  //  $("#signin").click(async function (e) {
+                  //         e.preventDefault();
+                  //         // window.location.href = "/signin";
+                  //         console.log("sign in")
+                  //     });
+                      // var myKeyValues = window.location.search;
+                        // console.log(window.location);
+                    $(document).ready(async function () {
+                      const users = await getData('GET', '/api/bloodRequest');
+                      // console.log(users.role[name]);
+                     $('#show-users').text(JSON.stringify(users));
+                    });
+              
+                    $('#submit').click(async function (e){
+                      e.preventDefault();
+                      let blood_group = $('#bloodGroup').val();
+                      let dateOfRequest = $('#date').val();
+                      let numOfBags = $('#nob').val();
+                      let location = $('#location').val();
+
+                      const urlParams = new URLSearchParams(window.location.search);
+                      const donorId = urlParams.get('donorId');
+
+                      let payload = {
+                        blood_group, 
+                        dateOfRequest, 
+                        numOfBags, 
+                        location, 
+                        donorId
+                      };
+                      const create = await getData('POST', '/api/bloodRequest', payload);
+                      if ( create.statusCode === 200 ) {
+                        alert('Request Send!!');
+                        let donorId=create.data.donorId;
+                        // console.log(donorId);
+                        window.location.href=`/rHome?donorId=${donorId}`
+                      };
+                    });
+                  </script>
+                </body>
+              </html>

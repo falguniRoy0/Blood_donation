@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true
       },
-      bloodtype: {
-        type: DataTypes.STRING,
-        allowNull: true
-      },
+      // bloodtype: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -28,10 +28,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true
       },
-      gender: {
-        type: DataTypes.STRING,
-        allowNull: true
-      },
+      // gender: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
       phonenumber: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -69,10 +69,10 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function (models) {
 
-    User.hasOne(models.Donor, {
-      as: 'donor',
-      foreignKey: 'userId'
-    });
+    // User.hasOne(models.Donor, {
+    //   as: 'donor',
+    //   foreignKey: 'userId'
+    // });
 
     User.belongsToMany(models.Role, {
       through: 'UserRole',
@@ -93,10 +93,10 @@ module.exports = (sequelize, DataTypes) => {
     //   foreignKey: 'userId'
     // });
 
-    User.hasOne(models.Bloodrequest, {
-      as: 'bloodRequest',
-      foreignKey: 'userId'
-    });
+    // User.hasOne(models.Bloodrequest, {
+    //   as: 'bloodRequest',
+    //   foreignKey: 'userId'
+    // });
 
     User.hasOne(models.Bloodissued, {
       as: 'bloodIssued',

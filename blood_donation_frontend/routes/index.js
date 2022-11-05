@@ -28,6 +28,35 @@ router.get("/learnAboutBlood", function(req,res,next) {
   })
 });
 
+router.get("/dashboard", function(req,res,next) {
+  res.render("dashboard/index", {
+    pageTitle: 'REDFLOW'
+  })
+});
+
+router.get("/chart", function(req,res,next) {
+  res.render("dashboard/chart", {
+    pageTitle: 'REDFLOW'
+  })
+});
+router.get("/userTable", function(req,res,next) {
+  res.render("dashboard/table", {
+    pageTitle: 'REDFLOW'
+  })
+});
+router.get("/donorTable", function(req,res,next) {
+  res.render("dashboard/donorTable", {
+    pageTitle: 'REDFLOW'
+  })
+});
+router.get("/recipientTable", function(req,res,next) {
+  res.render("dashboard/recTable", {
+    pageTitle: 'REDFLOW'
+  })
+});
+
+
+
 router.get("/eligibility", function(req,res,next) {
   res.render("howToDonate/eligibility", {
     pageTitle: 'REDFLOW Requirements Eligibility'
@@ -97,6 +126,7 @@ router.get("/rHome", frontendController.rHome);
 
 router.get("/signin", frontendController.signin);
 router.get("/rSignin", frontendController.rSignin);
+router.get("/forgetPass", frontendController.forgetPass);
 
 router.get("/logout", frontendController.logout);
 
@@ -114,8 +144,8 @@ router.get("/chooseBy", frontendController.chooseBy);
 router.get("/byRequest", frontendController.byRequest);
 router.get("/enterLocation", frontendController.enterLocation);
 router.get("/safeDonors", frontendController.safeDonors);
-
-
+router.get("/bloodReq", frontendController.bloodReq);
+router.get("/requestList", frontendController.requestList);
 
 
 router.post(

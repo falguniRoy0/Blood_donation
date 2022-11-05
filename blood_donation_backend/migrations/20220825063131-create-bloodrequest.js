@@ -9,33 +9,37 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       dateOfRequest: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       bloodGroup: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING
       },
       numOfBags: {
-        allowNull: false,
-        type: Sequelize.FLOAT
-      },
-      amountPerBag: {
-        allowNull: false,
-        type: Sequelize.FLOAT
-      },
-      purpose: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      requestStatus: {
         allowNull: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
-      remarks: {
+      location: {
         allowNull: true,
         type: Sequelize.STRING
       },
+      // amountPerBag: {
+      //   allowNull: false,
+      //   type: Sequelize.FLOAT
+      // },
+      // purpose: {
+      //   allowNull: false,
+      //   type: Sequelize.STRING
+      // },
+      // requestStatus: {
+      //   allowNull: true,
+      //   type: Sequelize.INTEGER
+      // },
+      // remarks: {
+      //   allowNull: true,
+      //   type: Sequelize.STRING
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

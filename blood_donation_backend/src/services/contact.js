@@ -4,7 +4,7 @@ const { NotFound } = require('../responses/errors');
 
 class contactService {
   show() {
-    return contact.findAll();
+    return contact.findAndCountAll();
   }
 
   findByID(id) {

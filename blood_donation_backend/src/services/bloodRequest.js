@@ -4,11 +4,15 @@ const { NotFound } = require('../responses/errors');
 
 class BloodrequestService {
   show() {
-    return Bloodrequest.findAll();
+    return Bloodrequest.findAll({
+      include: [{ association: 'Donor' }, { association: 'Recipient' }]
+    });
   }
 
   findByID(id) {
-    return Bloodrequest.findByPk(id);
+    return Bloodrequest.findByPk(id, {
+      include: [{ association: 'Donor' }, { association: 'Recipient' }]
+    });
   }
 
   create(payload) {

@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Donor = sequelize.define('Donor', {
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     image: {
       type: DataTypes.BLOB,
@@ -11,28 +11,28 @@ module.exports = (sequelize, DataTypes) => {
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     address: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     contact: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       unique: true
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     gender: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     remarks: {
       type: DataTypes.STRING,
@@ -44,6 +44,11 @@ module.exports = (sequelize, DataTypes) => {
     //   as: 'donor',
     //   foreignKey: 'userId'
     // });
+
+    // Donor.belongsTo(models.Bloodrequest, {
+    //   as: 'Donor',
+    //   foreignKey: 'reqId'
+    //  });
 
     // Donor.belongsTo(models.Bloodgroup, {
     //   as: 'Donor',

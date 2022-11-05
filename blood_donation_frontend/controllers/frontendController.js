@@ -25,6 +25,12 @@ class FrontendController {
     });
   }
 
+  async forgetPass(req, res, next) {
+    res.render("pages/auth/forgetPass", {
+      pageTitle: 'REDFLOW Password Forgot'
+    });
+  }
+
   async home(req, res, next) {
     res.render("pages/users/home", {
       pageTitle: 'REDFLOW Home'
@@ -78,6 +84,11 @@ class FrontendController {
       pageTitle: 'REDFLOW'
     });
   }
+  async bloodReq(req, res, next) {
+    res.render("pages/bloodCollect/bloodReq", {
+      pageTitle: 'REDFLOW'
+    });
+  }
   async byRequest(req, res, next) {
     res.render("pages/bloodCollect/byRequest", {
       pageTitle: 'REDFLOW'
@@ -90,6 +101,11 @@ class FrontendController {
   }
   async safeDonors(req, res, next) {
     res.render("pages/bloodCollect/safeDonors", {
+      pageTitle: 'REDFLOW'
+    });
+  }
+  async requestList(req, res, next) {
+    res.render("pages/bloodCollect/requestList", {
       pageTitle: 'REDFLOW'
     });
   }

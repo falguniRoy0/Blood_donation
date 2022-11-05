@@ -17,10 +17,10 @@ const Bloodgroup = sequelize.define('Bloodgroup', {
       foreignKey: 'userId'
      });
 
-     Bloodgroup.hasMany(models.Recipient, {
-      as: 'Recipient',
-      foreignKey: 'bloodGroupId'
-     });
+    //  Bloodgroup.hasMany(models.Recipient, {
+    //   as: 'Recipient',
+    //   foreignKey: 'bloodGroupId'
+    //  });
   }
   return Bloodgroup;
 };

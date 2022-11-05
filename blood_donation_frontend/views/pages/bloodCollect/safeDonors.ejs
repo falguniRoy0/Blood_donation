@@ -183,9 +183,10 @@
       const users = await response.data;
       // console.log(users);
     for(let i=0; i<users.length; i++){
+      let id = users[i].id;
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].id, users[i].name, users[i].bloodGroup, users[i].bloodType, users[i].city, '<a href="/chooseBy"><button class="btn btn-danger" type="button">Request</button></a>',
+      users[i].id, users[i].name, users[i].bloodGroup, users[i].bloodType, users[i].city, `<a href="/bloodReq?donorId=${id}"><button class="btn btn-danger" type="button">Request</button></a>`
      ]).draw();
     }
 });

@@ -2,7 +2,7 @@ const userService = require('../services/user');
 const jwt = require('jsonwebtoken');
 
 class UserController {
-  findAll(req, res, next) {
+  findAndCountAll(req, res, next) {
     return userService.show();
   }
 
@@ -33,6 +33,21 @@ class UserController {
     const usertype = req.params.usertype;
     return userService.findRecipient(usertype);
   }
+
+  countDonor(req, res, next) {
+    const usertype = req.params.usertype;
+    return userService.countDonor(usertype);
+  }
+
+  countRecipient(req, res, next) {
+    const usertype = req.params.usertype;
+    return userService.countRecipient(usertype);
+  }
+
+  // countUser(req, res, next) {
+  //   const id = req.params.id;
+  //   return userService.countUser(usertype);
+  // }
 }
 
 module.exports = new UserController();

@@ -158,7 +158,7 @@
         bloodGroup, 
         userId
       };
-      console.log(payload);
+      // console.log(payload);
       const create = await getData('POST', '/api/blood-group', payload);
       if ( create.statusCode === 200) {
         let userId = create.data.userId;

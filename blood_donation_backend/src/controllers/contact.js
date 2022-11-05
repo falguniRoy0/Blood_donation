@@ -1,7 +1,7 @@
 const contactService = require('../services/contact');
 
 class contactController {
-  findAll(req, res, next) {
+  findAndCountAll(req, res, next) {
     return contactService.show();
   }
 
@@ -13,6 +13,7 @@ class contactController {
   create(req, res, next) {
     let payload = req.body;
     return contactService.create(payload);
+    
   }
 
   async update(req, res, next) {
