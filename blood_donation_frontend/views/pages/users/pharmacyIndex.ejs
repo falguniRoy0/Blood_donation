@@ -194,7 +194,7 @@
 
     $(document).ready(async function () {
       const users = await getData('GET', '/api/pharmacy');
-     $('#show-users').text(JSON.stringify(users));
+    //  $('#show-users').text(JSON.stringify(users));
     //  $('#bloodgroup').multiselect();
     });
 
@@ -214,7 +214,7 @@
       const create = await getData('POST', '/api/pharmacy', payload);
       if ( create.statusCode === 200 ) {
         alert('OK DONE!!');
-        window.reload();
+        location.reload();
       };
     });
   </script>

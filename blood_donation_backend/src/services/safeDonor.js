@@ -4,7 +4,7 @@ const { NotFound } = require('../responses/errors');
 
 class SafeDonorService {
   show() {
-    return SafeDonor.findAll();
+    return SafeDonor.findAndCountAll();
   }
 
   findByID(id) {

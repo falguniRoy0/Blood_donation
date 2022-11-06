@@ -1,7 +1,7 @@
 const bloodRequestService = require('../services/bloodRequest');
 
 class bloodRequestController {
-  findAll(req, res, next) {
+  findAndCountAll(req, res, next) {
     return bloodRequestService.show();
   }
 
@@ -10,9 +10,33 @@ class bloodRequestController {
     return bloodRequestService.findByID(id);
   }
 
-  create(req, res, next) {
+  async create(req, res, next) {
     let payload = req.body;
-    return bloodRequestService.create(payload);
+    let bloodRequest = await bloodRequestService.create(payload);
+    if( !bloodRequest ) {
+      throw new Error('something wrong!!');
+    }
+    mailer.sendMail({
+      from: "flowred70@gmail.com",
+      to: payload.Donor.email,
+      subject: "REDFLOW//BLOOD-REQUEST!!",
+      template: {
+        name: "bloodRequest.html",
+        data: {
+          donorName: payload.Donor.name,
+          recipientName: payload.Recipient.name,
+          recipientEmail: payload.Recipient.email,
+          recipientCity: payload.Recipient.city,
+          date: payload.dateOfRequest,
+          bloodGroup: payload.blood_group,
+          bags: payload.numOfBags,
+          location: payload.location,
+          company: "REDFLOW"
+        }
+      }
+    });
+    // res.send("Send HTML file successfully");
+    return bloodRequest;
   }
 
   async update(req, res, next) {

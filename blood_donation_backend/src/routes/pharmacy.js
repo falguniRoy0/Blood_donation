@@ -2,7 +2,7 @@ const router = require('express').Router();
 const pharmacyController = require('../controllers/pharmacy');
 const wrapper = require('../responses/wrapper');
 
-router.get('/', wrapper(pharmacyController.findAll));
+router.get('/', wrapper(pharmacyController.findAndCountAll));
 router.post('/', wrapper(pharmacyController.create));
 router.get('/:id', wrapper(pharmacyController.findById));
 router.put('/:id', wrapper(pharmacyController.update));

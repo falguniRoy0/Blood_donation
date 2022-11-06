@@ -178,7 +178,7 @@
   <script>
     $(document).ready(async function () {
       const response = await getData('GET', '/api/pharmacy');
-      const users = await response.data;
+      const users = await response.data.rows;
       // console.log(users);
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);

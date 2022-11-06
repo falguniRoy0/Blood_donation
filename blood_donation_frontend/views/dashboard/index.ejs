@@ -188,6 +188,9 @@ input {
                     <a href="/userTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>User Table</a>
                     <a href="/donorTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Donor Table</a>
                     <a href="/recipientTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Recipient Table</a>
+                    <a href="/safeDonorTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Safe Donor Table</a>
+                    <a href="/requestTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Request Table</a>
+                    <a href="/pharmacyTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Pharmacy Table</a>
                     <a href="/chart" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
@@ -336,6 +339,33 @@ input {
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <h6 class="mb-2">Total Safe Donor</h6>
+                                <h3 class="mb-0" id="totalSafeDonor">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <h6 class="mb-2">Total Blood Request</h6>
+                                <h3 class="mb-0" id="totalBloodReq">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <h6 class="mb-2">Total Pharmacy</h6>
+                                <h3 class="mb-0" id="totalPharmacy">0</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Sale & Revenue End -->
@@ -426,7 +456,19 @@ input {
         const contacts = await getData('GET', '/api/contact');
         const resContact = await contacts.data.count;
          $('#totalContact').text(JSON.stringify(resContact));
-        });
+
+        const safeDonors = await getData('GET', '/api/safeDonor');
+        const resSafeDonor = await safeDonors.data.count;
+         $('#totalSafeDonor').text(JSON.stringify(resSafeDonor));
+
+        const Requests = await getData('GET', '/api/bloodRequest');
+        const resRequest = await Requests.data.count;
+         $('#totalBloodReq').text(JSON.stringify(resRequest));
+
+         const Pharmacy = await getData('GET', '/api/pharmacy');
+        const resPharmacy = await Pharmacy.data.count;
+         $('#totalPharmacy').text(JSON.stringify(resPharmacy));
+        });   
         </script>
 
 <script>

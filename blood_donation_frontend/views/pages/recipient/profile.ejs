@@ -192,6 +192,7 @@
     <script>
         $(document).ready(function () {
             let userId = user.id;
+            // console.log(userId);
             
             get();
 
@@ -234,7 +235,7 @@
                     name, phonenumber, city, address, email, message
                 };
                 const response = await getData('PUT', `/api/user/${userId}`, payload);
-                console.log(response)
+                // console.log(response)
                 if(response.statusCode === 200) {
                     if (window.confirm(response.message)) {
                         location.reload();

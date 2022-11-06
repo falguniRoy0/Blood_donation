@@ -5,14 +5,14 @@ const { NotFound } = require('../responses/errors');
 class UserService {
    show() {
     return User.findAndCountAll({
-      include: [{ association: 'roles'}, { association: 'bloodGroups'}, 
+      include: [{ association: 'roles'}, { association: 'bloodGroups'},{ association: 'safeDonor'}, 
       { association: 'tods'}, { association: 'donorQueries'}, { association: 'bloodIssued' }]
     });
   }
 
   findByID(id) {
     return User.findByPk(id, {
-      include: [{ association: 'tods' }, { association: 'bloodGroups'}, { association: 'donorQueries'}]
+      include: [{ association: 'tods' }, { association: 'bloodGroups'}, { association: 'donorQueries'},{ association: 'safeDonor'},]
     });
   }
 

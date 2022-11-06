@@ -49,7 +49,7 @@
                             </ul>
                           </li>
                           <!-- <li><a class="nav-link scrollto" href="/profile">My Account</a></li> -->
-                          <li><a class="getstarted scrollto" href="/signin">Log Out</a></li>
+                          <li><a class="getstarted scrollto" href="/selectUser">Log Out</a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                       </nav>
@@ -164,8 +164,7 @@
                   </footer><!-- End Footer -->
                 
                   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-                
-                
+
                 <script src="vendor/aos/aos.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -178,9 +177,12 @@
                 <script src="js/main.js"></script>
 
 
+
                 <script>
-                    var user = JSON.parse("<%- JSON.stringify(user) %>");
-                  </script>
+                  var user = JSON.parse("<%- JSON.stringify(user) %>");
+                  // console.log(user);
+                </script>
+
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                   <script
                     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -194,14 +196,8 @@
                   ></script>
                   <script src="/javascripts/ajaxRequest.js"></script>
                   <script>
-                  //  $("#signin").click(async function (e) {
-                  //         e.preventDefault();
-                  //         // window.location.href = "/signin";
-                  //         console.log("sign in")
-                  //     });
-                      // var myKeyValues = window.location.search;
-                        // console.log(window.location);
                     $(document).ready(async function () {
+
                       const users = await getData('GET', '/api/bloodRequest');
                       // console.log(users.role[name]);
                      $('#show-users').text(JSON.stringify(users));
@@ -216,20 +212,23 @@
 
                       const urlParams = new URLSearchParams(window.location.search);
                       const donorId = urlParams.get('donorId');
+                      const recipientId = urlParams.get('userId');
 
                       let payload = {
                         blood_group, 
                         dateOfRequest, 
                         numOfBags, 
                         location, 
-                        donorId
+                        donorId,
+                        recipientId
                       };
                       const create = await getData('POST', '/api/bloodRequest', payload);
                       if ( create.statusCode === 200 ) {
                         alert('Request Send!!');
                         let donorId=create.data.donorId;
+                        let recipientId = create.data.recipientId;
                         // console.log(donorId);
-                        window.location.href=`/rHome?donorId=${donorId}`
+                        window.location.href=`/rHome?donorId=${donorId}&recipientId=${recipientId}`
                       };
                     });
                   </script>

@@ -103,6 +103,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId'
     });
 
+    User.hasOne(models.SafeDonor, {
+      as: 'safeDonor',
+      foreignKey: 'userId'
+    });
+
     User.hasOne(models.ToD, {
       as: 'tods',
       foreignKey: 'userId'

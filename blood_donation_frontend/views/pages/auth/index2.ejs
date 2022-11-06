@@ -179,6 +179,10 @@
     <script src="js/main.js"></script>
 
 
+    <script>
+      var user = JSON.parse('<%-JSON.stringify(user)%>');
+      // console.log(user);
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -191,12 +195,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/javascripts/ajaxRequest.js"></script>
-    <script>
-    //  $("#signup").click(async function (e) {
-    //         e.preventDefault();
-    //         window.location.href = "/user";
-    //     });
-        
+    <script>     
       $(document).ready(async function () {
         $("#singin-button").click(async function (e) {
           e.preventDefault();
@@ -217,7 +216,7 @@
               }).then((res) => {
                 if (res.isLoggedIn) {
                   alert("Successfully LoggedIn!!")
-                  window.location.href = "/rHome";
+                  window.location.href = `/rHome?userId=${user.id}`;
                 }
               });
             } else {

@@ -1,7 +1,7 @@
 const pharmacyService = require('../services/pharmacy');
 
 class pharmacyController {
-  findAll(req, res, next) {
+  findAndCountAll(req, res, next) {
     return pharmacyService.show();
   }
 

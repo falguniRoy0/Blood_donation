@@ -4,7 +4,7 @@ const { NotFound } = require('../responses/errors');
 
 class BloodrequestService {
   show() {
-    return Bloodrequest.findAll({
+    return Bloodrequest.findAndCountAll({
       include: [{ association: 'Donor' }, { association: 'Recipient' }]
     });
   }

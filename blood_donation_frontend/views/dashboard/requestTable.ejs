@@ -60,9 +60,9 @@
                     <a href="/dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="/userTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>User Table</a>
                     <a href="/donorTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Donor Table</a>
-                    <a href="/recipientTable" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Recipient Table</a>
+                    <a href="/recipientTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Recipient Table</a>
                     <a href="/safeDonorTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Safe Donor Table</a>
-                    <a href="/requestTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Request Table</a>
+                    <a href="/requestTable" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Request Table</a>
                     <a href="/pharmacyTable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Pharmacy Table</a>
                     <a href="/chart" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                 </div>
@@ -172,12 +172,9 @@
                         <table id="example" class="table table-striped" style="width:100%">
                           <thead>
                               <tr>
-                                  <th>Id</th>
-                                  <th>Name</th>
-                                  <th>Email</th>
-                                  <!-- <th>Donation Type</th> -->
-                                  <th>City</th>
-                                  <!-- <th></th> -->
+                                  <th>Request ID</th>
+                                  <th>Donor ID</th>
+                                  <th>Recipient ID</th>
                               </tr>
                           </thead>
                           <tbody>         
@@ -227,13 +224,13 @@
        <script src="/javascripts/ajaxRequest.js"></script>
       <script>
         $(document).ready(async function () {
-          const response = await getData('GET', '/api/user/Recipient');
-          const users = await response.data;
+          const response = await getData('GET', '/api/bloodRequest');
+          const users = await response.data.rows;
         //   console.log(users);
         for(let i=0; i<users.length; i++){
           // console.log(users[i]);
           $('#example').DataTable().row.add([
-          users[i].id, users[i].name, users[i].email, users[i].city
+          users[i].id, users[i].donorId, users[i].recipientId,
          ]).draw();
         }
     });

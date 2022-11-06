@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>*|MC:SUBJECT|*</title>
+    <style>
+      .text-info {
+        color: green;
+      }
+
+      .text-doc{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+    <img src="https://cdn.pixabay.com/photo/2013/07/13/09/48/blood-156063__480.png" width="400" height="400">
+
+    <h1 class="text-info">Hi {{donorName}}.</h1>
+    <h3 class="text-doc">There is a Blood-Request for You.</h3>
+    <h2 class="text-muted">Request Details:</h2>
+    <p>Blood Group:  <big style="color: blue;">{{bloodGroup}} </big></p>
+    <p>Num Of Bags need: <big style="color: blue;">{{bags}}</big> </p>
+    <p>Location of Blood Collection:<big style="color: blue;">{{location}}</big> </p>
+    <p>Date of Collection: <big style="color: blue;">{{date}}</big> </p>
+
+    <h4 class="text-detail">Blood Request Coming from {{recipientName}}.Her/Him City is in {{recipientCity}}.
+      Here is her/him EmailID: {{recipientEmail}}.To Contact her/him please send message by her/him Email Id.</h4>
+    <h1 class="text-info">Advance Best Of Luck from <big style="color: red;">{{company}} Family!!</big></h1>
+  </center>
+  </body>
+</html>

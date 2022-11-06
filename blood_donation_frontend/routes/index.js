@@ -54,6 +54,21 @@ router.get("/recipientTable", function(req,res,next) {
     pageTitle: 'REDFLOW'
   })
 });
+router.get("/safeDonorTable", function(req,res,next) {
+  res.render("dashboard/safeDonorTable", {
+    pageTitle: 'REDFLOW'
+  })
+});
+router.get("/requestTable", function(req,res,next) {
+  res.render("dashboard/requestTable", {
+    pageTitle: 'REDFLOW'
+  })
+});
+router.get("/pharmacyTable", function(req,res,next) {
+  res.render("dashboard/pharmacyTable", {
+    pageTitle: 'REDFLOW'
+  })
+});
 
 
 

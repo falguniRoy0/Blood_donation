@@ -4,7 +4,7 @@ const { NotFound } = require('../responses/errors');
 
 class PharmacyService {
   show() {
-    return Pharmacy.findAll();
+    return Pharmacy.findAndCountAll();
   }
 
   findByID(id) {

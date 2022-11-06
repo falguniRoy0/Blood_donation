@@ -1,7 +1,7 @@
 const safeDonorService = require('../services/safeDonor');
 
 class safeDonorController {
-  findAll(req, res, next) {
+  findAndCountAll(req, res, next) {
     return safeDonorService.show();
   }
 

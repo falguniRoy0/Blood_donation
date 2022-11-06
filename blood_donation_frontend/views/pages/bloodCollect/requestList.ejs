@@ -49,7 +49,7 @@
                             </ul>
                           </li>
                           <!-- <li><a class="nav-link scrollto" href="/profile">My Account</a></li> -->
-                          <li><a class="getstarted scrollto" href="/signin">Log Out</a></li>
+                          <li><a class="getstarted scrollto" href="/selectUser">Log Out</a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                       </nav>
@@ -146,9 +146,6 @@
 
     
               <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->        
-    <!-- <script>
-      var user = JSON.parse('<%-JSON.stringify(user)%>');
-    </script> -->
   
   <!-- <script src="/vendor/aos/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -161,6 +158,11 @@
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
   <!-- <script src="/vendor/php-email-form/validate.js"></script> -->
   <!-- <script src="/js/main.js"></script> -->
+
+
+  <script>
+    var user = JSON.parse('<%-JSON.stringify(user)%>');
+  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>  
@@ -178,7 +180,7 @@
   <script>
     $(document).ready(async function () {
       const response = await getData('GET', '/api/bloodRequest');
-      const users = await response.data;
+      const users = await response.data.rows;
     //   console.log(users);
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
