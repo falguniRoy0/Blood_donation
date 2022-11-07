@@ -1,5 +1,6 @@
 const status = require('http-status');
 const Bloodrequest = require('../models').Bloodrequest;
+const User = require('../models').User;
 const { NotFound } = require('../responses/errors');
 
 class BloodrequestService {
@@ -15,10 +16,8 @@ class BloodrequestService {
     });
   }
 
-  create(bloodRequest) {
-    return Bloodrequest.create(bloodRequest, {
-      include: [{ association: 'Donor' }, { association: 'Recipient' }]
-    });
+  create(payload) {
+    return Bloodrequest.create(payload);
   }
 
   async update(id, payload) {

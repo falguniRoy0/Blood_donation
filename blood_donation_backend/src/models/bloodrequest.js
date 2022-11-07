@@ -3,34 +3,42 @@ module.exports = (sequelize, DataTypes) => {
   const Bloodrequest = sequelize.define('Bloodrequest', {
     dateOfRequest: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: false
     },
     blood_group: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     numOfBags: {
       type: DataTypes.FLOAT,
-      allowNull: true
+      allowNull: false
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
+    },
+    donorId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    recipientId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   })
   Bloodrequest.associate = function(models){
-    Bloodrequest.hasMany(models.Bloodissued, {
+    Bloodrequest.belongsTo(models.Bloodissued, {
     as: 'blood_issued',
     foreignKey: 'blood_request_id'
     });  
     
     Bloodrequest.belongsTo(models.User, {
-      as: 'Donor',
+      as: 'donor',
       foreignKey: 'donorId'
     });
 
     Bloodrequest.belongsTo(models.User, {
-      as: 'Recipient',
+      as: 'recipient',
       foreignKey: 'recipientId'
     });
    

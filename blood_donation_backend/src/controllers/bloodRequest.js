@@ -1,4 +1,5 @@
 const bloodRequestService = require('../services/bloodRequest');
+const mailer = require("../utils/mailer");
 
 class bloodRequestController {
   findAndCountAll(req, res, next) {
@@ -12,33 +13,32 @@ class bloodRequestController {
 
   async create(req, res, next) {
     let payload = req.body;
-    // console.log(payload);
     let bloodRequest = await bloodRequestService.create(payload);
-    console.log(bloodRequest);
-    // console.log(bloodRequest);
-    // if( !bloodRequest ) {
-    //   throw new Error('something wrong!!');
-    // }
-    // mailer.sendMail({
-    //   from: "flowred70@gmail.com",
-    //   to: bloodRequest.include,
-    //   subject: "REDFLOW//BLOOD-REQUEST!!",
-    //   template: {
-    //     name: "bloodRequest.html",
-    //     data: {
-    //       donorName: bloodRequest.rows.Donor.name,
-    //       recipientName: bloodRequest.rows.Recipient.name,
-    //       recipientEmail: bloodRequest.rows.Recipient.email,
-    //       recipientCity: bloodRequest.rows.Recipient.city,
-    //       date: payload.dateOfRequest,
-    //       bloodGroup: payload.blood_group,
-    //       bags: payload.numOfBags,
-    //       location: payload.location,
-    //       company: "REDFLOW"
-    //     }
-    //   }
-    // });
-    // res.send("Send HTML file successfully");
+    if (!bloodRequest) {
+      throw new Error('something wrong!!');
+    }
+    let donor = await bloodRequest.getDonor();
+    let recipient = await bloodRequest.getRecipient();
+
+    mailer.sendMail({
+      from: 'flowred70@gmail.com',
+      to: donor.email,
+      subject: 'REDFLOW//BLOOD-REQUEST!!',
+      template: {
+        name: 'bloodRequest.html',
+        data: {
+          donorName: donor.name,
+          recipientName: recipient.name,
+          recipientEmail: recipient.email,
+          recipientCity: recipient.city,
+          date: bloodRequest.dateOfRequest,
+          bloodGroup: bloodRequest.blood_group,
+          bags: bloodRequest.numOfBags,
+          location: bloodRequest.location,
+          company: 'REDFLOW'
+        }
+      }
+    });
     return bloodRequest;
   }
 

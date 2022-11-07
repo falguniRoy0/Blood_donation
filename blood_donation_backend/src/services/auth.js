@@ -15,15 +15,6 @@ class AuthService {
     let salt = await bcrypt.genSalt(10);
     let hash = await bcrypt.hash(payload.password, salt);
     payload.password = hash;
-    const { email } = payload;
-    const isEmailExit = await User.findOne({
-      where: {
-        email
-      }
-    });
-    if (isEmailExit) {
-      throw new BadRequestErr('Email already taken.');
-    }
     return User.create(payload);
   }
 
