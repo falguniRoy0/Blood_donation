@@ -15,8 +15,10 @@ class BloodrequestService {
     });
   }
 
-  create(payload) {
-    return Bloodrequest.create(payload);
+  create(bloodRequest) {
+    return Bloodrequest.create(bloodRequest, {
+      include: [{ association: 'Donor' }, { association: 'Recipient' }]
+    });
   }
 
   async update(id, payload) {

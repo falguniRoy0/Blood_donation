@@ -7,6 +7,12 @@ class FrontendController {
     });
   }
 
+  async map(req, res, next) {
+    res.render("pages/users/map", {
+      pageTitle: 'REDFLOW Location'
+    });
+  }
+
   async getPharmacy(req, res, next) {
     res.render("pages/users/pharmacyIndex", {
       pageTitle: 'REDFLOW Give Pharmacy Details'

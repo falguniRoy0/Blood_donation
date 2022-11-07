@@ -12,29 +12,32 @@ class bloodRequestController {
 
   async create(req, res, next) {
     let payload = req.body;
+    // console.log(payload);
     let bloodRequest = await bloodRequestService.create(payload);
-    if( !bloodRequest ) {
-      throw new Error('something wrong!!');
-    }
-    mailer.sendMail({
-      from: "flowred70@gmail.com",
-      to: payload.Donor.email,
-      subject: "REDFLOW//BLOOD-REQUEST!!",
-      template: {
-        name: "bloodRequest.html",
-        data: {
-          donorName: payload.Donor.name,
-          recipientName: payload.Recipient.name,
-          recipientEmail: payload.Recipient.email,
-          recipientCity: payload.Recipient.city,
-          date: payload.dateOfRequest,
-          bloodGroup: payload.blood_group,
-          bags: payload.numOfBags,
-          location: payload.location,
-          company: "REDFLOW"
-        }
-      }
-    });
+    console.log(bloodRequest);
+    // console.log(bloodRequest);
+    // if( !bloodRequest ) {
+    //   throw new Error('something wrong!!');
+    // }
+    // mailer.sendMail({
+    //   from: "flowred70@gmail.com",
+    //   to: bloodRequest.include,
+    //   subject: "REDFLOW//BLOOD-REQUEST!!",
+    //   template: {
+    //     name: "bloodRequest.html",
+    //     data: {
+    //       donorName: bloodRequest.rows.Donor.name,
+    //       recipientName: bloodRequest.rows.Recipient.name,
+    //       recipientEmail: bloodRequest.rows.Recipient.email,
+    //       recipientCity: bloodRequest.rows.Recipient.city,
+    //       date: payload.dateOfRequest,
+    //       bloodGroup: payload.blood_group,
+    //       bags: payload.numOfBags,
+    //       location: payload.location,
+    //       company: "REDFLOW"
+    //     }
+    //   }
+    // });
     // res.send("Send HTML file successfully");
     return bloodRequest;
   }

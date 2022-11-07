@@ -137,6 +137,7 @@ router.get("/user", frontendController.getUsers);
 router.get("/pharmacyUser", frontendController.getPharmacy);
 
 router.get("/home", frontendController.home);
+router.get("/map", frontendController.map);
 router.get("/rHome", frontendController.rHome);
 
 router.get("/signin", frontendController.signin);

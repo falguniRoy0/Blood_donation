@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title><%= pageTitle %></title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="images/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    body {
+  color: green;
+  font-family: "Poppins", sans-serif;
+}
+
+.fa-map-marker-alt,
+.fa-dot-circle {
+  color: #5bc0de;
+}
+
+/*Jumbotron*/
+.jumbotron {
+  background-color: rgb(251, 237, 237);
+  margin: 0;
+  padding: 10px;
+}
+
+.jumbotron h1 {
+  letter-spacing: 2.5px;
+  font-size: 3.5em;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  text-align: center;
+  font-weight: bold
+}
+
+/*map*/
+#googleMap {
+  width: 70%;
+  height: 500px;
+  margin: 10px auto;
+}
+
+/*output box*/
+#output {
+  text-align: center;
+  font-size: 1em;
+  margin: 20px auto;
+}
+
+#mode {
+  color: black;
+}
+
+  </style>
+</head>
+
+<body>
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1 class="text-light"><a href="/"><img src="images/favicon.png" width="60px" height="120px"><span><b><big style="color: rgb(224, 53, 53);">RED</big>FLOW</span></b></a></h1>
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <!-- <li class="dropdown"><a href="#"><span>Member List</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/donorList">Donor List</a></li>
+              <li><a href="/recipientList">Recipient List</a></li>
+            </ul>
+          </li> -->
+          <li><a class="nav-link scrollto" href="/map">Location</a></li>
+          <li><a class="nav-link scrollto" href="/recipientList">Recipient List</a></li>
+          <li><a class="nav-link scrollto" href="/profile">My Account</a></li>
+          <li><a class="getstarted scrollto" href="/selectUser">Log Out</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <div class="jumbotron">
+      <div class="container-fluid">
+        <h1>Find The Distance Between You & Recipient.</h1>
+        <p style="color: red;">This Map Will Help You Calculate Your Travelling Distances.</p>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="from" class="col-xs-2 control-label"
+              ><i class="far fa-dot-circle"></i
+            ></label>
+            <div class="col-xs-4">
+              <input
+                type="text"
+                id="from"
+                placeholder="Recipient Address"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="to" class="col-xs-2 control-label"
+              ><i class="fas fa-map-marker-alt"></i
+            ></label>
+            <div class="col-xs-4">
+              <input
+                type="text"
+                id="to"
+                placeholder="Your Address"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </form><br><br>
+        <div class="col-xs-offset-2 col-xs-10">
+          <button class="btn btn-primary btn-lg" onclick="calcRoute();">
+            Enter
+          </button>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="googleMap"></div>
+        <div id="output"></div>
+      </div>
+    </div>
+  </main>
+  
+      
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+       <script src=""></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+       <!-- Include all compiled plugins (below), or include individual files as needed -->
+       <script src="Scripts/jquery-3.1.1.min.js"></script>
+  
+      <script src="vendor/aos/aos.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+      <script src="vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="vendor/php-email-form/validate.js"></script>
+      <script src="js/main.js"></script>
+  
+      <script>
+        let myLatLng = { lat: 23.81360466930146, lng: 90.4113832175947 };
+        let mapOptions = {
+        center: myLatLng,
+        zoom: 8,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  
+  
+  //create map
+  let map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+  let directionsService = new google.maps.DirectionsService();
+  let directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
+  
+  
+  //define calcRoute function
+  function calcRoute() {
+      let request = {
+          origin: document.getElementById("from").value,
+          destination: document.getElementById("to").value,
+          travelMode: google.maps.TravelMode.DRIVING, 
+          unitSystem: google.maps.UnitSystem.IMPERIAL
+      }
+  
+      directionsService.route(request, function (result, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+  
+              //Get distance and time
+              const output = document.querySelector('#output');
+              output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + 
+              ".<br />To: " + document.getElementById("to").value + 
+              ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + 
+              ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + 
+              ".</div>";
+  
+              directionsDisplay.setDirections(result);
+          } else {
+              directionsDisplay.setDirections({ routes: [] });
+              map.setCenter(myLatLng);
+  
+              //show error message
+              output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
+          }
+      });
+  
+  }
+  
+  //create autocomplete objects for all inputs
+  let options = {
+      types: ['address'],
+      componentRestrictions: {
+          country: ['bd']
+        }
+  }
+  
+  let input1 = document.getElementById("from");
+  let autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+  
+  let input2 = document.getElementById("to");
+  let autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+  
+      </script>
+    </body>
+  </html>
+  
