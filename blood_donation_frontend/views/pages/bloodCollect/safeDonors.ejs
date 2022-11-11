@@ -58,7 +58,7 @@
                   
                   <main id="main">
                       <div class="container pt-5">
-                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Suggested Donors Based on Your Location!!</b></h1>
+                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Suggested Donors Who are Safe for You!! Request Now!!</b></h1>
                       </div>
                   </main>
                   
@@ -71,7 +71,7 @@
                               <th>Name</th>
                               <th>Blood Group</th>
                               <th>Donation Type</th>
-                              <th>City</th>
+                              <th>Address</th>
                               <th></th>
                           </tr>
                       </thead>
@@ -189,7 +189,7 @@
       let id = users[i].userId;
       // console.log(id);
       $('#example').DataTable().row.add([
-      users[i].id, users[i].name, users[i].bloodGroup, users[i].bloodType, users[i].city, `<a href="/bloodReq?donorId=${id}&userId=${recipientId}"><button class="btn btn-danger" type="button">Request</button></a>`
+      users[i].id, users[i].name, users[i].bloodGroup, users[i].donationType, users[i].address, `<a href="/bloodReq?donorId=${id}&userId=${recipientId}"><button class="btn btn-danger" type="button">Request</button></a>`
      ]).draw();
     }
 });

@@ -27,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
   Bloodrequest.associate = function(models){
-    Bloodrequest.belongsTo(models.Bloodissued, {
-    as: 'blood_issued',
-    foreignKey: 'blood_request_id'
-    });  
+    // Bloodrequest.belongsTo(models.Bloodissued, {
+    // as: 'blood_issued',
+    // foreignKey: 'blood_request_id'
+    // });  
     
     Bloodrequest.belongsTo(models.User, {
       as: 'donor',

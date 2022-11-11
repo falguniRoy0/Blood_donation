@@ -232,6 +232,7 @@
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <script src="vendor/php-email-form/validate.js"></script>
     <script src="js/main.js"></script>
+
     <script>
       var user = JSON.parse("<%- JSON.stringify(user) %>");
     </script>
@@ -246,15 +247,8 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
-    <script src="/javascripts/ajaxRequest.js"></script>
+    <script src="/javascripts/ajaxRequest.js"></script>  
     <script>
-    //  $("#signin").click(async function (e) {
-    //         e.preventDefault();
-    //         // window.location.href = "/signin";
-    //         console.log("sign in")
-    //     });
-        // var myKeyValues = window.location.search;
-          // console.log(window.location);
       $(document).ready(async function () {
         const users = await getData('GET', '/api/user');
         // console.log(users.role[name]);
@@ -286,7 +280,7 @@
         };
         const create = await getData('POST', '/api/auth', payload);
         if ( create.statusCode === 200 && create.data.usertype=="Donor" ) {
-          alert('User Created!!');
+          alert('User Created!!'); 
           let id = create.data.id;
           window.location.href=`/selectBloodGroup?userId=${id}`
         } else if ( create.statusCode === 200 && create.data.usertype=="Recipient" ) {

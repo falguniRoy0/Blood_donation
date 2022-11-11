@@ -6,13 +6,13 @@ const { NotFound } = require('../responses/errors');
 class BloodrequestService {
   show() {
     return Bloodrequest.findAndCountAll({
-      include: [{ association: 'Donor' }, { association: 'Recipient' }]
+      include: [{ association: 'donor' }, { association: 'recipient' }]
     });
   }
 
   findByID(id) {
     return Bloodrequest.findByPk(id, {
-      include: [{ association: 'Donor' }, { association: 'Recipient' }]
+      include: [{ association: 'donor' }, { association: 'recipient' }]
     });
   }
 

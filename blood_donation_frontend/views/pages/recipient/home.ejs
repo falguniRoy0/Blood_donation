@@ -226,7 +226,11 @@ function calcRoute() {
 
 //create autocomplete objects for all inputs
 let options = {
+    types: ['establishment'],
     types: ['address'],
+    // types: ['(cities)'],
+    // types: ['geocode'],
+    // types: ['(regions)'],
     componentRestrictions: {
         country: ['bd']
       }

@@ -72,6 +72,7 @@
                               <th>Blood Group</th>
                               <th>Donation Type</th>
                               <th>City</th>
+                              <th>Address</th>
                               <th></th>
                           </tr>
                       </thead>
@@ -189,7 +190,7 @@
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].id, users[i].name, users[i].bloodGroups.bloodGroup, users[i].tods.name, users[i].city, `<a href="/chooseBy?userId=${recipientId}"><button class="btn btn-danger" type="button">ADD</button></a>`,
+      users[i].id, users[i].name, users[i].bloodGroups.bloodGroup, users[i].tods.name, users[i].city, users[i].address,`<a href="/chooseBy?userId=${recipientId}"><button class="btn btn-danger" type="button">ADD</button></a>`,
      ]).draw();
     }
 });

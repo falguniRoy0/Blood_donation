@@ -185,7 +185,7 @@
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].Donor.id, users[i].Donor.name, users[i].Donor.email, users[i].Donor.city, users[i].Donor.address
+      users[i].donor.id, users[i].donor.name, users[i].donor.email, users[i].donor.city, users[i].donor.address
      ]).draw();
     }
 });

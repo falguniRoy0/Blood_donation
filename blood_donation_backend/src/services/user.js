@@ -6,7 +6,7 @@ class UserService {
    show() {
     return User.findAndCountAll({
       include: [{ association: 'roles'}, { association: 'bloodGroups'},{ association: 'safeDonor'}, 
-      { association: 'tods'}, { association: 'donorQueries'}, { association: 'bloodIssued' }]
+      { association: 'tods'}, { association: 'donorQueries'}]
     });
   }
 

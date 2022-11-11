@@ -98,10 +98,10 @@ module.exports = (sequelize, DataTypes) => {
     //   foreignKey: 'userId'
     // });
 
-    User.hasOne(models.Bloodissued, {
-      as: 'bloodIssued',
-      foreignKey: 'userId'
-    });
+    // User.hasOne(models.Bloodissued, {
+    //   as: 'bloodIssued',
+    //   foreignKey: 'userId'
+    // });
 
     User.hasOne(models.SafeDonor, {
       as: 'safeDonor',

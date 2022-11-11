@@ -70,7 +70,8 @@
                           <tr>
                               <th>Id</th>
                               <th>Name</th>
-                              <th>City</th>
+                              <th>Email</th>
+                              <th>Address</th>
                           </tr>
                       </thead>
                       <tbody>         
@@ -180,7 +181,7 @@
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].id, users[i].name, users[i].city,
+      users[i].id, users[i].name, users[i].email, users[i].address,
      ]).draw();
     }
 });
