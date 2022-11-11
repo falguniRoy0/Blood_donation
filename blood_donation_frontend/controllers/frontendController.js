@@ -31,6 +31,12 @@ class FrontendController {
     });
   }
 
+  async aSignin(req, res, next) {
+    res.render("pages/auth/index3", {
+      pageTitle: 'REDFLOW Admin LogIn'
+    });
+  }
+
   async forgetPass(req, res, next) {
     res.render("pages/auth/forgetPass", {
       pageTitle: 'REDFLOW Password Forgot'
@@ -144,7 +150,7 @@ class FrontendController {
         } else {
           res.clearCookie("token");
           res.clearCookie("connect.sid");
-          return res.redirect("/signin");
+          return res.redirect("/aSignin");
         }
       });
     }
