@@ -32,6 +32,12 @@ class AuthController {
     let payload = req.body;
     return authService.login(payload);
   }
+
+
+  // async forgotPass(req, res, next) {
+  //   let payload = req.body;
+  //   return authService.forgotPass(payload);
+  // }
 }
 
 module.exports = new AuthController();

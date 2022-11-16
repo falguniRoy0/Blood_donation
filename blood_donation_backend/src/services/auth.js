@@ -1,5 +1,4 @@
 require('dotenv').config();
-// const nodemailer = require('nodemailer');
 const status = require('http-status');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -19,8 +18,6 @@ class AuthService {
   }
 
   
-  
-
   async login(payload) {
     const { email, password } = payload;
     const isEmailExit = await User.findOne({

@@ -4,6 +4,7 @@ const wrapper = require('../responses/wrapper');
 
 router.post('/login', wrapper(userController.login));
 router.post('/', wrapper(userController.create));
+// router.post('/forgotPass', wrapper(userController.forgotPass));
 
 
 // router.post('/', async (req, res, next) => {
