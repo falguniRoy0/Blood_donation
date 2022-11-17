@@ -1,24 +1,23 @@
 const authService = require('../services/auth');
-const mailer = require("../utils/mailer");
-
+const mailer = require('../utils/mailer');
 
 class AuthController {
- async create(req, res, next) {
+  async create(req, res, next) {
     let payload = req.body;
     let user = await authService.save(payload);
-    if( !user ) {
+    if (!user) {
       throw new Error('something wrong!!');
     }
-     mailer.sendMail({
-      from: "flowred70@gmail.com",
+    mailer.sendMail({
+      from: 'flowred70@gmail.com',
       to: payload.email,
-      subject: "WELLCOME to REDFLOW!!",
+      subject: 'WELLCOME to REDFLOW!!',
       template: {
-        name: "EmailConfirmation.html",
+        name: 'EmailConfirmation.html',
         data: {
           name: payload.name,
           usertype: payload.usertype,
-          company: "REDFLOW"
+          company: 'REDFLOW'
         }
       }
     });
@@ -26,18 +25,15 @@ class AuthController {
     return user;
   }
 
-  
-
   async login(req, res, next) {
     let payload = req.body;
     return authService.login(payload);
   }
 
-
-  // async forgotPass(req, res, next) {
-  //   let payload = req.body;
-  //   return authService.forgotPass(payload);
-  // }
+  async forgetPassword(req, res, next) {
+    let payload = req.body;
+    return authService.forgotPass(payload);
+  }
 }
 
 module.exports = new AuthController();

@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const userController = require('../controllers/auth');
+const authController = require('../controllers/auth');
 const wrapper = require('../responses/wrapper');
 
-router.post('/login', wrapper(userController.login));
-router.post('/', wrapper(userController.create));
-// router.post('/forgotPass', wrapper(userController.forgotPass));
+router.post('/login', wrapper(authController.login));
+router.post('/', wrapper(authController.create));
+router.post('/forget-password', wrapper(authController.forgetPassword));
 
 
 // router.post('/', async (req, res, next) => {

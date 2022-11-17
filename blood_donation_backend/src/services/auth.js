@@ -8,6 +8,8 @@ const {
   Unauthorized
 } = require('../responses/errors');
 const User = require('../models').User;
+const generatePassword = require('../utils/generatePassword');
+const mailer = require('../utils/mailer');
 
 class AuthService {
   async save(payload) {
@@ -17,13 +19,12 @@ class AuthService {
     return User.create(payload);
   }
 
-  
   async login(payload) {
     const { email, password } = payload;
     const isEmailExit = await User.findOne({
       where: {
         email
-      },
+      }
     });
     // console.log(isEmailExit)
     if (!isEmailExit) {
@@ -48,6 +49,38 @@ class AuthService {
       process.env.APP_SECRET
     );
     return { token };
+  }
+
+  async forgotPass({ email }) {
+    let salt = await bcrypt.genSalt(10);
+    let password = generatePassword();
+    let hp = await bcrypt.hash(password, salt);
+
+    let user = await User.findOne({
+      where: {
+        email
+      }
+    });
+
+    if (!user) {
+      throw new Error('User not found.');
+    }
+
+    await user.update({
+      password: hp
+    });
+    await mailer.sendMail({
+      from: 'hijal.browser@gmail.com',
+      to: email,
+      subject: '[RedFlow] Reset Password',
+      template: {
+        name: 'ResetPassword.html',
+        data: {
+          password: password
+        }
+      }
+    });
+    return { password };
   }
 }
 
