@@ -67,16 +67,17 @@ class AuthService {
     }
 
     await user.update({
-      password: hp
+      password: hp,
+      confirmpassword: password
     });
     await mailer.sendMail({
-      from: 'hijal.browser@gmail.com',
+      from: 'flowred70@gmail.com',
       to: email,
       subject: '[RedFlow] Reset Password',
       template: {
         name: 'ResetPassword.html',
         data: {
-          password: password
+          Password: password
         }
       }
     });

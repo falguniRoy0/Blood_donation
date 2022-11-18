@@ -80,6 +80,11 @@ const proxyEndpointMap = {
     service: 'BLOOD_DONATION_CLIENT',
     endpoint: 'users/dashboardRecipient'
   },
+
+  '/api/auth/forget-password': {
+    service: 'BLOOD_DONATION_CLIENT',
+    endPoint: 'auth/forget-password'
+  },
 };
 
 const endPointKeys = Object.keys(proxyEndpointMap);
