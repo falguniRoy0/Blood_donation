@@ -215,7 +215,7 @@
                 token: login.data.token,
               }).then((res) => {
                 if (res.isLoggedIn) {
-                  alert("Successfully LoggedIn!!")
+                  alert("Successfully LoggedIn!!");
                   window.location.href = `/rHome?userId=${user.id}`;
                 }
               });

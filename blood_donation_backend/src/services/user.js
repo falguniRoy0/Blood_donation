@@ -12,7 +12,7 @@ class UserService {
 
   findByID(id) {
     return User.findByPk(id, {
-      include: [{ association: 'tods' }, { association: 'bloodGroups'}, { association: 'donorQueries'},{ association: 'safeDonor'},]
+      include: [{ association: 'tods' }, { association: 'bloodGroups'}, { association: 'donorQueries'},{ association: 'safeDonor'}]
     });
   }
 

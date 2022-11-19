@@ -53,7 +53,7 @@
                   
                   <main id="main">
                       <div class="container pt-5">
-                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Your Requests List</b></h1>
+                         <h1 style="color: rgb(224, 53, 53); font-style:italic; font-size: 50px; text-align: center;"><b>Requests List</b></h1>
                       </div>
                   </main>
                   
@@ -68,6 +68,7 @@
                               <th>Email</th>
                               <th>City</th>
                               <th>Address</th>
+                              <th>Recipient Id</th>
                           </tr>
                       </thead>
                       <tbody>         
@@ -157,6 +158,7 @@
 
   <script>
     var user = JSON.parse('<%-JSON.stringify(user)%>');
+    // console.log(user);
   </script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -176,11 +178,12 @@
     $(document).ready(async function () {
       const response = await getData('GET', '/api/bloodRequest');
       const users = await response.data.rows;
-    //   console.log(users);
+    let id = user.id;
+    // console.log(id);
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].donor.id, users[i].donor.name, users[i].donor.email, users[i].donor.city, users[i].donor.address
+      users[i].donor.id, users[i].donor.name, users[i].donor.email, users[i].donor.city, users[i].donor.address, users[i].recipient.id
      ]).draw();
     }
 });

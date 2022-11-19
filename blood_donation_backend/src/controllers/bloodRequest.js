@@ -54,6 +54,11 @@ class bloodRequestController {
     await bloodRequestService.delete(id);
     return 'BloodRequest deleted successfully';
   }
+
+  // findReqRes(req, res, next) {
+  //   const id = req.params.recipient.id;
+  //   return bloodRequestService.findByID(id);
+  // }
 }
 
 module.exports = new bloodRequestController();

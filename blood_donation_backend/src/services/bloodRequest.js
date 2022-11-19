@@ -35,6 +35,15 @@ class BloodrequestService {
     }
     return bloodrequest.destroy();
   }
+
+  // findByID(id) {
+  //   return Bloodrequest.findByPk(id, {
+  //     include: [{ association: 'donor' }],
+  //     where: {
+  //       id:"recipeint.id"
+  //     },
+  //   });
+  // }
 }
 
 module.exports = new BloodrequestService();

@@ -97,7 +97,7 @@
                             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                                 <img class="rounded-circle mt-5" width="150px" 
                                 src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                <span class="font-weight-bold" id="userType"></span><span class="text-black-50" id="userName"></span>
+                                <span class="font-weight-bold" id="id"></span><span class="font-weight-bold" id="userType"></span><span class="text-black-50" id="userName"></span>
                                 <!-- <span> </span> -->
                             </div>
                         </div>
@@ -200,6 +200,7 @@
                 const response = await getData('GET', `/api/user/${userId}`);
                 if(response.statusCode === 200) {
                     const user = response.data;
+                    const id = user.id;
                     const usertype = user.usertype;
                     const username = user.name;
 
@@ -218,6 +219,7 @@
                     $("#email").val(email);
                     $("#message").val(message);
 
+                    $("#id").text(id);
                     $("#userType").text(usertype);
                     $("#userName").text(username);
                 }
