@@ -30,7 +30,7 @@ router.get("/learnAboutBlood", function(req,res,next) {
 
 router.get("/dashboard", authenticate, function(req,res,next) {
   res.render("dashboard/index", {
-    pageTitle: 'REDFLOW'
+    pageTitle: 'REDFLOW Admin Dashboard'
   })
 });
 
@@ -145,7 +145,7 @@ router.get("/rSignin", frontendController.rSignin);
 router.get("/aSignin", frontendController.aSignin);
 router.get("/forgetPass", frontendController.forgetPass);
 
-router.get("/logout", frontendController.logout);
+router.get("/logout", authenticate, frontendController.logout);
 
 router.get("/profile", frontendController.profile);
 router.get("/account", frontendController.account);
