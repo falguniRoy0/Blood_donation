@@ -178,12 +178,11 @@
     $(document).ready(async function () {
       const response = await getData('GET', '/api/bloodRequest');
       const users = await response.data.rows;
-    let id = user.id;
-    // console.log(id);
+      let index = 1;
     for(let i=0; i<users.length; i++){
       // console.log(users[i]);
       $('#example').DataTable().row.add([
-      users[i].donor.id, users[i].donor.name, users[i].donor.email, users[i].donor.city, users[i].donor.address, users[i].recipient.id
+      index++, users[i].donor.name, users[i].donor.email, users[i].donor.city, users[i].donor.address, users[i].recipient.name
      ]).draw();
     }
 });
